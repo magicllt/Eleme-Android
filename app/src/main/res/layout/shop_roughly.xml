@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+    <!--高度后期设置为dp单位-->
+
+
+    <ImageView
+        android:id="@+id/shop_image"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/od_good_1" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <!--右侧第一行：店名+按钮-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/shop_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="商家店名"
+                android:textStyle="bold" />
+            <!--后期字体大小都得调整-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right">
+
+                <ImageView
+                    android:id="@+id/shop_menu_other_selector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:src="@drawable/od_checkout_grey_left_arrow_big" />
+                <!--图标后期替换成三个点的-->
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--右侧第二行：评分加销量-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!--评分-->
+            <LinearLayout
+                android:layout_marginEnd="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/od_icon_star_golden" />
+
+                <TextView
+                    android:id="@+id/shop_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="4.4"
+                    android:textColor="@color/red"
+                    />
+                <!--颜色后期可以改成预设的统一颜色 如?attr/等带有前缀的预设值-->
+            </LinearLayout>
+
+            <!--月销量-->
+            <TextView
+                android:id="@+id/shop_sales"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="月销量2004"
+                />
+        </LinearLayout>
+
+        <!--右侧第三行：配送费 以及时间和距离-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!--配送费-->
+            <TextView
+                android:id="@+id/shop_fee_send"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:text="起送￥30 配送￥6"
+                />
+
+            <!--配送时间及距离-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/shop_time_dis_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:text="42分钟 4.5km"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--右侧第四行：各种标签-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!--示例活动标签-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:gravity="center"
+                android:text="首单减15"
+                android:textColor="@color/red"
+                android:textSize="@dimen/activity_horizontal_margin" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right">
+                <!--向下展开活动标签按钮-->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/re_pop_arrow_down"
+                    />
+                <!--后期有时间加响应时间的话再加id-->
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--问题1 图片的缩放以及大小 因为和后面有关-->
+    <!--问题2 最后向下扩展的图标的大小-->
+</LinearLayout>

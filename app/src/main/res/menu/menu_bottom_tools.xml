@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:enabled="true"
+            android:id="@+id/menu_bottom_tools_eat"
+            android:icon="@drawable/bottom_tools_icon_list_takeout"
+            android:title="外卖" />
+        <item
+            android:id="@+id/menu_bottom_tools_order"
+            android:icon="@drawable/bottom_tools_icon_list_order"
+            android:title="订单" />
+        <item
+            android:id="@+id/menu_bottom_tools_personal"
+            android:icon="@drawable/bottom_tools_icon_list_personal"
+            android:title="我的" />
+</menu>
