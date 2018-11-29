@@ -34,7 +34,7 @@
         android:layout_height="wrap_content">
 
         <!--背景透明通过背景色设置-->
-        <TextView
+        <EditText
             android:background="#1Affffff"
             android:paddingBottom="5dp"
             android:layout_marginBottom="5dp"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <TextView
+        <EditText
             android:background="#1Affffff"
             android:hint="密码"
             android:textColor="@color/lightgray"
@@ -120,7 +120,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent">
-                <android.support.v4.widget.CircleImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_account_taobao"
@@ -139,7 +139,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent">
-                <android.support.v4.widget.CircleImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_account_alipay"
@@ -158,7 +158,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent">
-                <android.support.v4.widget.CircleImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_account_weibo"
@@ -177,7 +177,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent">
-                <android.support.v4.widget.CircleImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_account_wechat"
@@ -196,7 +196,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent">
-                <android.support.v4.widget.CircleImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_account_qq"
@@ -217,4 +217,5 @@
 <!--问题1：两行输入行颜色设置有问题，设置不生效-->
 <!--问题2：最下面第三方登录UI相对布局无法设置为最下面-->
 <!--问题3：标题栏的图标无法显示-->
+<!--问题4：输入框粉红光标-->
 <!--关于问题3，可能会用百分比布局做Demo然后看效果-->
