@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.example.zxq.elework.R;
 import com.example.zxq.elework.application.MyApplication;
-import com.example.zxq.elework.domain.User;
+import com.example.zxq.elework.domain.UserDO;
 import com.example.zxq.elework.result.Result;
 import com.example.zxq.elework.utils.HttpUtil;
 import com.example.zxq.elework.utils.UrlUtil;
@@ -18,7 +18,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
-import java.net.URL;
 
 import okhttp3.Call;
 import okhttp3.FormBody;
@@ -86,9 +85,9 @@ public class LoginActivity extends BaseActivity{
                     if (response.isSuccessful()){
                         String responseData = response.body().string();
                         Gson gson = new Gson();
-                        final Result<User> result = gson.fromJson(responseData, new TypeToken<Result<User>>(){}.getType());
+                        final Result<UserDO> result = gson.fromJson(responseData, new TypeToken<Result<UserDO>>(){}.getType());
                         if (result.getCode() == 0){
-                            User user = result.getData();
+                            UserDO user = result.getData();
                             MyApplication.setUser(user);
                             runOnUiThread(new Runnable() {
                                 @Override

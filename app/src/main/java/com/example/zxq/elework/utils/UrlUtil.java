@@ -7,7 +7,7 @@ package com.example.zxq.elework.utils;
 public class UrlUtil {
 
 //    服务器url
-    private static String serverUrl = "http://" + "115.196.144.12" + ":8080";
+    private static String serverUrl = "http://" + "115.196.153.223" + ":8080";
 
 //    用户登录
     private static String userLogin = "/user/login";

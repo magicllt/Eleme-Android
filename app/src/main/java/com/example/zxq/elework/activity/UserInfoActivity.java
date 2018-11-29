@@ -6,7 +6,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.zxq.elework.R;
 import com.example.zxq.elework.application.MyApplication;
-import com.example.zxq.elework.domain.User;
+import com.example.zxq.elework.domain.UserDO;
 import com.example.zxq.elework.utils.UrlUtil;
 import com.example.zxq.elework.utils.ValidatorUtil;
 
@@ -33,16 +33,16 @@ public class UserInfoActivity extends BaseActivity {
         showUserInfo(MyApplication.getUser());
     }
 
-    private void showUserInfo(User user){
+    private void showUserInfo(UserDO user){
 
 //        设置用户头像
-        if (ValidatorUtil.isEmpty(user.getUavatar()) == false){
-            Glide.with(UserInfoActivity.this).load(UrlUtil.getImageUrl(user.getUavatar())).into(userAvatar);
+        if (ValidatorUtil.isEmpty(user.getAvatar()) == false){
+            Glide.with(UserInfoActivity.this).load(UrlUtil.getImageUrl(user.getAvatar())).into(userAvatar);
         }
 //        设置手机号码
-        userPhone.setText(user.getUphone());
+        userPhone.setText(user.getPhone());
 //        设置用户名
-        userName.setText(user.getUname());
+        userName.setText(user.getName());
 
     }
 }

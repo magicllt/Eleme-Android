@@ -23,7 +23,8 @@ package="com.example.zxq.elework">
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.BaseActivity"></activity>
+        <activity android:name=".activity.BaseActivity">
+        </activity>
     </application>
 </manifest>
 
