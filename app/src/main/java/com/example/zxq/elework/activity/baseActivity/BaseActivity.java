@@ -1,4 +1,4 @@
-package com.example.zxq.elework.activity;
+package com.example.zxq.elework.activity.baseActivity;
 
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;

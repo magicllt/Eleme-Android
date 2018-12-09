@@ -1,15 +1,9 @@
 package com.example.zxq.elework.activity;
 
-import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.example.zxq.elework.R;
-
-import static com.example.zxq.elework.R.id.bottom_tools_view;
+import com.example.zxq.elework.activity.baseActivity.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 

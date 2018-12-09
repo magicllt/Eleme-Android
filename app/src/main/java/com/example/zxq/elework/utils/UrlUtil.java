@@ -1,5 +1,7 @@
 package com.example.zxq.elework.utils;
 
+import com.example.zxq.elework.application.MyApplication;
+
 /**
  * Created by LLT on 2018/11/29.
  */
@@ -7,10 +9,12 @@ package com.example.zxq.elework.utils;
 public class UrlUtil {
 
 //    服务器url
-    private static String serverUrl = "http://" + "115.196.153.223" + ":8080";
+    private static String serverUrl = "http://" + "115.196.155.247" + ":8080";
 
 //    用户登录
     private static String userLogin = "/user/login";
+
+    private static String addressList = "/address/list/%d";
 
     public static String getServerUrl() {return serverUrl;}
 
@@ -21,4 +25,6 @@ public class UrlUtil {
     public static String getImageUrl(String img){
         return serverUrl + "/" + img;
     }
+
+    public static String getAddressList(){return String.format(serverUrl + addressList, MyApplication.getUser().getId());}
 }

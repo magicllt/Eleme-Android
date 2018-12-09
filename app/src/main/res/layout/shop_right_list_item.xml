@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp">
+
+    <!--商品图片-->
+    <ImageView
+        android:layout_margin="5dp"
+        android:src="@drawable/fish"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_margin="5dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="酸菜鱼大份"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--销量-->
+        <TextView
+            android:layout_margin="5dp"
+            android:textSize="15dp"
+            android:textColor="@color/lightgray"
+            android:text="月售538"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--售价及按钮-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:text="￥41"
+                android:textColor="@color/red"
+                android:textSize="20dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:background="@drawable/re_goods_button_minus_gray"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/dimgrey"
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:background="@drawable/re_goods_button_add"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

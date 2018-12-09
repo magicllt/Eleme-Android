@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--地址栏单元-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content">
+
+    <!--左侧信息-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+        <!--地址-->
+        <TextView
+            android:id="@+id/address_unit_address_text"
+            android:layout_margin="5dp"
+            android:text="浙江农林大学（东湖校区）"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--门牌号-->
+        <TextView
+            android:id="@+id/address_unit_house_num_text"
+            android:layout_margin="5dp"
+            android:text="学10-101"
+            android:textColor="@color/darkslategrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <!--联系人姓名和性别-->
+            <TextView
+                android:id="@+id/address_unit_name_text"
+                android:textColor="@color/gray"
+                android:text="张旭清（先生）"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--联系人手机-->
+            <TextView
+                android:id="@+id/address_unit_phone_text"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/gray"
+                android:text="15306588376"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/address_unit_edit_img"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"
+            android:src="@drawable/bk_address_icon_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+</LinearLayout>

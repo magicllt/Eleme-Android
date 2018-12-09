@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.zxq.elework.R;
+import com.example.zxq.elework.activity.baseActivity.BaseActivity;
 import com.example.zxq.elework.application.MyApplication;
 import com.example.zxq.elework.domain.UserDO;
 import com.example.zxq.elework.result.Result;
@@ -24,7 +25,7 @@ import okhttp3.FormBody;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class LoginActivity extends BaseActivity{
+public class LoginActivity extends BaseActivity {
 
     Button loginBtn;
 
@@ -116,6 +117,12 @@ public class LoginActivity extends BaseActivity{
         }
     }
 
+    /**
+     * 判断用户输入的手机号码和密码是否符合基本的规范
+     * @param phoneStr 手机号码字符串
+     * @param pwdStr 密码字符串
+     * @return 判断数据是否符合规范
+     */
     private boolean isDataValid(String phoneStr, String pwdStr){
 //        数据非空检查
         if (ValidatorUtil.isEmpty(phoneStr) == false && ValidatorUtil.isEmpty(pwdStr) == false) {
