@@ -1,83 +1,257 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--新增地址-->
+<?xml version="1.0" encoding="utf-8"?><!--新增地址-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <!--新增地址以及返回按钮-->
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <ImageView
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/ac_page_back_arrow_black"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
-    <TextView
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:text="新增地址       "
-        android:textSize="18dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ac_page_back_arrow_black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="新增地址       "
+            android:textColor="@color/black"
+            android:textSize="18dp" />
     </LinearLayout>
 
     <View
-        android:layout_marginTop="5dp"
-        android:background="@color/lightgray"
         android:layout_width="match_parent"
-        android:layout_height="1px"/>
+        android:layout_height="1px"
+        android:layout_marginTop="5dp"
+        android:background="@color/lightgray" />
 
     <!--联系人-->
     <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
             android:text="联系人"
             android:textColor="@color/dimgrey"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:textStyle="bold" />
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <EditText
-                android:hint="姓名"
-                android:textSize="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:hint="姓名"
+                android:textSize="15dp" />
 
             <View
-                android:background="@color/lightgray"
                 android:layout_width="match_parent"
-                android:layout_height="1px"/>
+                android:layout_height="1px"
+                android:background="@color/lightgray" />
 
+            <!--先生和女士标签栏-->
             <LinearLayout
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!--这个要引用样式style  留坑待填-->
                 <Button
-                    android:text="先生"
-                    android:textColor="@color/lightgray"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
                     android:background="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:text="先生"
+                    android:textColor="@color/dimgray" />
+
+                <Button
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:background="@color/white"
+                    android:text="女士"
+                    android:textColor="@color/dimgray" />
 
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/lightgray" />
 
         </LinearLayout>
 
     </LinearLayout>
 
+    <!--电话栏-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:text="电话"
+            android:textColor="@color/dimgray"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="手机号码"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="+通讯录"
+            android:textColor="@color/dodgerblue" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/lightgray" />
+
+    <!--地址栏-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:text="地址"
+            android:textColor="@color/dimgray"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ap_arrow_right_gray"
+            android:hint="选择收货地址"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/lightgray" />
+
+
+
+    <!--门牌号-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/lightgray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:text="门牌号"
+            android:textColor="@color/dimgray"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="例： 5号楼203室"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/lightgray" />
+
+    <!--标签-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:text="标签"
+            android:textColor="@color/dimgray"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:background="@color/white"
+            android:text="家"
+            android:textColor="@color/dimgray" />
+
+        <Button
+            android:layout_marginLeft="20dp"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@color/white"
+            android:text="公司"
+            android:textColor="@color/dimgray" />
+
+        <Button
+            android:layout_marginLeft="20dp"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@color/white"
+            android:text="学校"
+            android:textColor="@color/dimgray" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/lightgray"
+        android:layout_marginBottom="5dp"/>
+
+    <!--保存并使用按钮-->
+    <Button
+        android:layout_margin="5dp"
+        android:text="保存并使用"
+        android:textColor="@color/white"
+        android:background="@color/green"
+        android:shadowColor="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
 </LinearLayout>
+
+<!--感觉电话到门牌号的几行间距有点问题 留坑待填-->

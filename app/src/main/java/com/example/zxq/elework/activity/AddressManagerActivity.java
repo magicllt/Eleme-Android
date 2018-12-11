@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 
@@ -22,6 +23,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 import okhttp3.Call;
 import okhttp3.Response;
@@ -110,7 +112,9 @@ public class AddressManagerActivity extends StateActivity {
                 if (response.isSuccessful()){
                     //解析数据
                     Gson gson = new Gson();
-                    final Result<List<AddressDO>>result = gson.fromJson(response.body().string(), new TypeToken<Result<List<AddressDO>>>(){}.getType());
+                    String responseData = response.body().string();
+                    Log.d(TAG, "onResponse: " + responseData);
+                    final Result<List<AddressDO>> result = gson.fromJson(responseData, new TypeToken<Result<List<AddressDO>>>(){}.getType());
                     if (result.getCode() == 0){
                         //显示成功界面，把数据放到适配器里面
                         runOnUiThread(new Runnable() {

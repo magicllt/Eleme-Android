@@ -9,7 +9,7 @@ import com.example.zxq.elework.application.MyApplication;
 public class UrlUtil {
 
 //    服务器url
-    private static String serverUrl = "http://" + "115.196.155.247" + ":8080";
+    private static String serverUrl = "http://" + "115.196.146.131" + ":8080";
 
 //    用户登录
     private static String userLogin = "/user/login";

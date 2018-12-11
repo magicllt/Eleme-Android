@@ -4,9 +4,12 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    android:paddingBottom="10dp"
+    android:layout_margin="5dp">
 
+    <!--综合排序-->
     <LinearLayout
+        android:layout_margin="5dp"
         android:orientation="horizontal"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -19,11 +22,13 @@
             android:ellipsize="end"
             />
         <ImageView
+            android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/od_checkout_grey_left_arrow_big"/>
     </LinearLayout>
 
+    <!--距离最近-->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="0dp"
@@ -38,6 +43,7 @@
             android:layout_weight="1" />
     </LinearLayout>
 
+    <!--品质联盟-->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -50,17 +56,19 @@
             android:layout_weight="1" />
     </LinearLayout>
 
+    <!--筛选-->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1">
         <TextView
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center_vertical|left"
+            android:gravity="center_vertical|right"
             android:text="筛选"
             android:layout_weight="1" />
-        <ImageButton
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/sp_icon_filter"/>

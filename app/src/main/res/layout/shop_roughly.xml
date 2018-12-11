@@ -8,7 +8,9 @@
     <!--高度后期设置为dp单位-->
 
 
+    <!--商家图片-->
     <ImageView
+        android:layout_margin="5dp"
         android:id="@+id/shop_image"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -16,6 +18,7 @@
         android:src="@drawable/od_good_1" />
 
     <LinearLayout
+        android:layout_marginLeft="5dp"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="3"
@@ -59,16 +62,19 @@
 
             <!--评分-->
             <LinearLayout
-                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:layout_marginRight="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:src="@drawable/od_icon_star_golden" />
 
                 <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:id="@+id/shop_score"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
