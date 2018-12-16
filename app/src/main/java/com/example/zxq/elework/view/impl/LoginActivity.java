@@ -45,7 +45,7 @@ public class LoginActivity extends BaseActivity implements LoginView, View.OnCli
 
     private void judgeLogined() {
         if (MyApplication.getUser() != null){
-            MyTabActivity.actionStart(this);
+            MainActivity.actionStart(this);
             this.finish();
         }
     }
@@ -73,7 +73,8 @@ public class LoginActivity extends BaseActivity implements LoginView, View.OnCli
 
     @Override
     public void onloginSuccess(){
-        MyTabActivity.actionStart(this);
+
+        MainActivity.actionStart(this);
     }
 
     private void initWidget() {

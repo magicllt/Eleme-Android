@@ -22,6 +22,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //    lombok的依赖
+    compile 'com.android.support:support-v4:25.4.0'
     provided 'org.projectlombok:lombok:1.16.18'
     compile 'org.glassfish:javax.annotation:10.0-b28'
     //    okhttp

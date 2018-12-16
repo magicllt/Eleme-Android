@@ -1,6 +1,8 @@
 package com.example.zxq.elework.view.impl;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -57,7 +59,7 @@ public class MyTabActivity extends BaseActivity implements MyTabView {
         @Override
         public void onClick(View view) {
             if (view == logoutImg){
-                userLogout();
+                getLogoutDialog().show();
                 return;
             }else if (view == userInfoImg){
                 jumpToUserInfo();
@@ -74,6 +76,25 @@ public class MyTabActivity extends BaseActivity implements MyTabView {
         MyApplication.userLogout();
         //切换到login
         LoginActivity.ActionStart(MyTabActivity.this);
+    }
+
+    private AlertDialog.Builder dialog;
+
+    private AlertDialog.Builder getLogoutDialog(){
+        if (dialog == null){
+            dialog = new AlertDialog.Builder(this);
+            dialog.setTitle("退出登录");
+            dialog.setMessage("是否退出登录？");
+            dialog.setCancelable(true);
+            dialog.setNegativeButton("取消", null);
+            dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    userLogout();
+                }
+            });
+        }
+        return dialog;
     }
 
     @Override

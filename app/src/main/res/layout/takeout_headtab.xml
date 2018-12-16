@@ -388,10 +388,6 @@
             <include layout="@layout/shop_roughly" />
 
             <include layout="@layout/shop_roughly" />
-
         </LinearLayout>
-        <!--底部的选项卡菜单栏-->
-        <include layout="@layout/menu_tab_bottom" />
     </ScrollView>
-
 </LinearLayout>
