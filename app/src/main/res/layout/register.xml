@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--顶部部分-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <!--标题栏-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/dodgerblue"
+            android:orientation="horizontal">
+
+            <!--actionBar隐藏Java代码实现-->
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_margin="5dp"
+                android:src="@drawable/arrows_left_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="   注册"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <!--两行输入栏-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <!--背景透明通过背景色设置-->
+            <EditText
+                android:id="@+id/register_user_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:hint="帐号ID/用户名/手机"
+                android:paddingBottom="5dp"
+                android:textColor="@color/grey"
+                android:textColorHint="@color/lightgray"/>
+
+            <View
+                android:background="@color/gainsboro"
+                android:layout_width="match_parent"
+                android:layout_height="1px"/>
+
+            <EditText
+                android:id="@+id/register_user_pasaword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:background="#1Affffff"
+                android:gravity="center_vertical"
+                android:hint="密码"
+                android:textColorHint="@color/lightgray"
+                android:textColor="@color/grey"
+                android:inputType="textPassword"/>
+            <View
+                android:background="@color/gainsboro"
+                android:layout_width="match_parent"
+                android:layout_height="1px"/>
+
+            <EditText
+                android:id="@+id/register_user_pasaword2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:background="#1Affffff"
+                android:gravity="center_vertical"
+                android:hint="请再次输入密码"
+                android:textColorHint="@color/lightgray"
+                android:textColor="@color/grey"
+                android:inputType="textPassword"/>
+            <!--忘记密码-->
+            <TextView
+                android:id="@+id/register_clear_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_margin="10dp"
+                android:hint="重置"
+                android:textColorHint="@color/dodgerblue" />
+        </LinearLayout>
+
+        <!--注册提示部分-->
+        <!--部分颜色字体设置是由java代码控制，设置text为html格式的字符串-->
+
+        <!--提示部分-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#1Affffff"
+            android:maxLines="2"
+            android:text="温馨提示：注册饿了么帐号的用户，代表您已同意《用户服务协议》" />
+
+        <!--登录按钮-->
+        <Button
+            android:id="@+id/register_register_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/limegreen"
+            android:text="注册"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <!--底部第三方登录UI 含图标-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <!--第三方登录UI-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--因为要居中 然后就三个组件外套了个LinearLayout-->
+            <LinearLayout
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--短分割线-->
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="1px"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/lightgray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:background="#1Affffff"
+                    android:gravity="center"
+                    android:text="第三方登录"
+                    android:textColor="@color/lightgray" />
+
+                <!--短分割线-->
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="1px"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/lightgray" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--图标栏-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <!--单个元素-->
+            <!--淘宝-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/taobao_iner_icon" />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#1Affffff"
+                    android:gravity="center"
+                    android:text="淘宝"
+                    android:textColor="@color/lightgray" />
+            </LinearLayout>
+
+            <!--微信-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/alipay_iner_icon" />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#1Affffff"
+                    android:gravity="center"
+                    android:text="支付宝"
+                    android:textColor="@color/lightgray" />
+            </LinearLayout>
+
+            <!--微博-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/weibo_iner_icon" />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#1Affffff"
+                    android:gravity="center"
+                    android:text="微博"
+                    android:textColor="@color/lightgray" />
+            </LinearLayout>
+
+            <!--微信-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/weixin_iner_icon" />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#1Affffff"
+                    android:gravity="center"
+                    android:text="微信"
+                    android:textColor="@color/lightgray" />
+            </LinearLayout>
+
+            <!--QQ-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/qq_iner_icon" />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#1Affffff"
+                    android:gravity="center"
+                    android:text="QQ"
+                    android:textColor="@color/lightgray" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+    <!--问题1：两行输入行颜色设置有问题，设置不生效--><!--问题2：最下面第三方登录UI相对布局无法设置为最下面--><!--问题3：标题栏的图标无法显示--><!--关于问题3，可能会用百分比布局做Demo然后看效果-->

@@ -9,10 +9,13 @@ import com.example.zxq.elework.application.MyApplication;
 public class UrlUtil {
 
 //    服务器url
-    private static String serverUrl = "http://" + "115.196.147.83" + ":8080";
+    private static String serverUrl = "http://" + "115.196.154.115" + ":8080";
 
 //    用户登录
     private static String userLogin = "user/login";
+
+//    用户注册
+    private static String userRegister = "user/register";
 
 //    获取用户的地址
     private static String addressList = "address/list/%d";
@@ -46,5 +49,9 @@ public class UrlUtil {
 
     public static String getAddressUpdate() {
         return addressUpdate;
+    }
+
+    public static String getUserRegister() {
+        return userRegister;
     }
 }

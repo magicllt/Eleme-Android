@@ -1,5 +1,7 @@
 package com.example.zxq.elework.view.impl;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -15,6 +17,8 @@ import com.example.zxq.elework.view.AddressManagerView;
 import com.example.zxq.elework.view.UserInfoView;
 import com.example.zxq.elework.view.base.BaseActivity;
 
+import java.net.Inet4Address;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserInfoActivity extends BaseActivity implements UserInfoView, View.OnClickListener{
@@ -23,6 +27,11 @@ public class UserInfoActivity extends BaseActivity implements UserInfoView, View
     private TextView userNameTextView;
     private View addressView;
     private TextView userPhoneTextView;
+
+    public static void actionStart(Context context){
+        Intent intent = new Intent(context, UserInfoActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

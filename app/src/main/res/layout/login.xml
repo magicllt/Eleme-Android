@@ -80,14 +80,14 @@
         <!--注册提示部分-->
         <!--部分颜色字体设置是由java代码控制，设置text为html格式的字符串-->
 
-        <!--提示部分-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#1Affffff"
-            android:maxLines="2"
-            android:text="温馨提示：未注册饿了么帐号的用户，登录时将自动注册，且代表您已同意《用户服务协议》" />
+        <!--&lt;!&ndash;提示部分&ndash;&gt;-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="5dp"-->
+            <!--android:background="#1Affffff"-->
+            <!--android:maxLines="2"-->
+            <!--android:text="温馨提示：未注册饿了么帐号的用户，登录时将自动注册，且代表您已同意《用户服务协议》" />-->
 
         <!--登录按钮-->
         <Button
@@ -106,12 +106,12 @@
 
         <!--忘记密码-->
         <TextView
-            android:id="@+id/forget"
+            android:id="@+id/login_register_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_margin="10dp"
-            android:hint="忘记密码?"
+            android:hint="注册账号"
             android:textColorHint="@color/dodgerblue" />
 
     </LinearLayout>

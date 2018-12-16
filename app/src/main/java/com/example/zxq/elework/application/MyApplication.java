@@ -20,6 +20,10 @@ public class MyApplication extends Application{
 
     private static UserDO user;
 
+    private static final String PREF_LOC = "userData";
+
+    private static final String USER_TAG = "user";
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -43,24 +47,33 @@ public class MyApplication extends Application{
         saveUserToPref(user);
     }
 
+    public static void userLogout(){
+        //清空数据
+        SharedPreferences.Editor editor = getContext().getSharedPreferences(PREF_LOC, MODE_PRIVATE).edit();
+        editor.clear().commit();
+        MyApplication.user = null;
+    }
+
     //将对象保存到pref
     private static void saveUserToPref(UserDO user){
-        SharedPreferences.Editor editor = getContext().getSharedPreferences("userData", MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = getContext().getSharedPreferences(PREF_LOC, MODE_PRIVATE).edit();
         Gson gson = new Gson();
         String userString = gson.toJson(user);
-        editor.putString("user", userString);
+        editor.putString(USER_TAG, userString);
         editor.apply();
     }
 
     //从pref里面导出对象
     private static UserDO loadUserFromPref(){
-        SharedPreferences pref = getContext().getSharedPreferences("userData", MODE_PRIVATE);
-        String userString = pref.getString("user", "");
+        SharedPreferences pref = getContext().getSharedPreferences(PREF_LOC, MODE_PRIVATE);
+        String userString = pref.getString(USER_TAG, "");
+        //有用户数据就解析数据
         if (ValidatorUtil.isEmpty(userString) == false){
             Gson gson = new Gson();
             UserDO user = gson.fromJson(userString, UserDO.class);
             return user;
         }
+        //返回null
         return null;
     }
 }

@@ -15,4 +15,6 @@ public interface LoginView extends BaseView{
      * 清除输入框
      */
     void clearEdit();
+
+    void onloginSuccess();
 }

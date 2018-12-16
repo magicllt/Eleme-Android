@@ -1,5 +1,7 @@
 package com.example.zxq.elework.presenter.impl;
 
+import com.example.zxq.elework.application.MyApplication;
+import com.example.zxq.elework.domain.UserDO;
 import com.example.zxq.elework.listener.AbstractOnModelFinishedListener;
 import com.example.zxq.elework.listener.OnModelFinishedListener;
 import com.example.zxq.elework.model.LoginModel;
@@ -39,11 +41,11 @@ public class LoginPresenterImpl implements LoginPresenter {
         loginModel.login(phone, pwd, new AbstractOnModelFinishedListener(loginView) {
             @Override
             public void success(Object obj) {
+                MyApplication.setUser((UserDO)(obj));
                 loginView.showMsg("登录成功");
+                loginView.onloginSuccess();
             }
-
         });
     }
-
 }
 
