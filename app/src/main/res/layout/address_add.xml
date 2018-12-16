@@ -17,6 +17,7 @@
             android:src="@drawable/ac_page_back_arrow_black" />
 
         <TextView
+            android:id="@+id/address_add_title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -54,6 +55,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/address_add_name_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="姓名"
@@ -72,6 +74,7 @@
 
                 <!--这个要引用样式style  留坑待填-->
                 <Button
+                    android:id="@+id/address_add_male_btn"
                     android:layout_width="50dp"
                     android:layout_height="20dp"
                     android:background="@color/white"
@@ -79,6 +82,7 @@
                     android:textColor="@color/dimgray" />
 
                 <Button
+                    android:id="@+id/address_add_female_btn"
                     android:layout_marginLeft="20dp"
                     android:layout_width="50dp"
                     android:layout_height="20dp"
@@ -113,6 +117,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/address_add_phone_edit"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -149,6 +154,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/address_add_address_edit"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -186,6 +192,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/address_add_house_edit"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -245,8 +252,9 @@
 
     <!--保存并使用按钮-->
     <Button
+        android:id="@+id/address_add_save_btn"
         android:layout_margin="5dp"
-        android:text="保存并使用"
+        android:text="保存"
         android:textColor="@color/white"
         android:background="@color/green"
         android:shadowColor="@color/gray"

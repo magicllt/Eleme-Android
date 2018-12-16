@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.zxq.elework.MainActivity">
+    tools:context="com.example.zxq.elework.view.impl.MainActivity">
 
-    <include layout="@layout/takeout_headtab"/>
+    <include layout="@layout/takeout_headtab" />
 </LinearLayout>

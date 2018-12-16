@@ -46,7 +46,7 @@
 
             <!--背景透明通过背景色设置-->
             <EditText
-                android:id="@+id/user_id"
+                android:id="@+id/login_user_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -64,7 +64,7 @@
                 android:layout_height="1px"/>
 
             <EditText
-                android:id="@+id/user_pasaword"
+                android:id="@+id/login_user_pasaword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -91,7 +91,7 @@
 
         <!--登录按钮-->
         <Button
-            android:id="@+id/login_btn"
+            android:id="@+id/login_login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"

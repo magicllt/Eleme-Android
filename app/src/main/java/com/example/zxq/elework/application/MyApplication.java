@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.zxq.elework.domain.UserDO;
+import com.example.zxq.elework.utils.UrlUtil;
 import com.example.zxq.elework.utils.ValidatorUtil;
 import com.google.gson.Gson;
+import com.itheima.retrofitutils.ItheimaHttp;
 
 /**
  * Created by LLT on 2018/11/29.
@@ -22,6 +24,7 @@ public class MyApplication extends Application{
     public void onCreate() {
         super.onCreate();
         context = getApplicationContext();
+        ItheimaHttp.init(this, UrlUtil.getServerUrl());
     }
 
     public static Context getContext() {

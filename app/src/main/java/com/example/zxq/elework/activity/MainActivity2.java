@@ -3,9 +3,9 @@ package com.example.zxq.elework.activity;
 import android.os.Bundle;
 
 import com.example.zxq.elework.R;
-import com.example.zxq.elework.activity.baseActivity.BaseActivity;
+import com.example.zxq.elework.activity.baseActivity.BaseActivity2;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity2 extends BaseActivity2 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

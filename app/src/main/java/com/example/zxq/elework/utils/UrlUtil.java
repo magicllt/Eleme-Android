@@ -9,22 +9,42 @@ import com.example.zxq.elework.application.MyApplication;
 public class UrlUtil {
 
 //    服务器url
-    private static String serverUrl = "http://" + "115.196.146.131" + ":8080";
+    private static String serverUrl = "http://" + "115.196.147.83" + ":8080";
 
 //    用户登录
-    private static String userLogin = "/user/login";
+    private static String userLogin = "user/login";
 
-    private static String addressList = "/address/list/%d";
+//    获取用户的地址
+    private static String addressList = "address/list/%d";
+
+//    删除地址
+    private static String addressDelete = "address/deleteStatus";
+
+//    保存地址
+    private static String addressSave = "address/save";
+
+//    更新地址
+    private static String addressUpdate = "address/update";
 
     public static String getServerUrl() {return serverUrl;}
 
     public static String getUserLoginUrl(){
-        return serverUrl + userLogin;
+        return userLogin;
     }
 
     public static String getImageUrl(String img){
         return serverUrl + "/" + img;
     }
 
-    public static String getAddressList(){return String.format(serverUrl + addressList, MyApplication.getUser().getId());}
+    public static String getAddressList(){return String.format(addressList, MyApplication.getUser().getId());}
+
+    public static String getAddressDelete() {return addressDelete;}
+
+    public static String getAddressSave() {
+        return addressSave;
+    }
+
+    public static String getAddressUpdate() {
+        return addressUpdate;
+    }
 }

@@ -93,6 +93,33 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\LLT\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="E:\workspace\AndroidStudioProjects\Eleme-Android\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_ecd0d18bd95532974b49d9717255d0ab2e05104d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\LLT\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="E:\workspace\AndroidStudioProjects\Eleme-Android\app\build\intermediates\pre-dexed\debug\converter-gson-2.1.0_0749aa9baf83af5cf491a177d7aac5afb94365a2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\workspace\AndroidStudioProjects\Eleme-Android\app\build\intermediates\exploded-aar\com.github.open-android\RetrofitUtils\0.1.9\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.1"
+        sha1="1501129af9aa4d25120ce3cd2448d2017377d99a">
+        <dex dex="E:\workspace\AndroidStudioProjects\Eleme-Android\app\build\intermediates\pre-dexed\debug\com.github.open-android-RetrofitUtils-0.1.9_ed3e960f826c84ee4788b9b8077716825f4aba47.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\LLT\.gradle\caches\modules-2\files-2.1\org.glassfish\javax.annotation\10.0-b28\30eb3b3cc9cb0863a4edaea5a7575f8ace1b96ba\javax.annotation-10.0-b28.jar"
         jumboMode="false"
         optimize="true"
