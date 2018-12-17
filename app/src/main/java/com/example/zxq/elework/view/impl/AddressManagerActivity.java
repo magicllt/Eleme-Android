@@ -21,12 +21,13 @@ import com.example.zxq.elework.domain.AddressDO;
 import com.example.zxq.elework.presenter.AddressManagerPresenter;
 import com.example.zxq.elework.presenter.impl.AddressManagerPresenterImpl;
 import com.example.zxq.elework.view.AddressManagerView;
+import com.example.zxq.elework.view.base.AbstractStateActivity;
 import com.example.zxq.elework.view.base.BaseActivity;
 import com.example.zxq.elework.widget.BounceLoadingView;
 
 import java.util.List;
 
-public class AddressManagerActivity extends BaseActivity implements AddressManagerView, View.OnClickListener{
+public class AddressManagerActivity extends AbstractStateActivity implements AddressManagerView, View.OnClickListener{
 
     private BounceLoadingView loadingView;
     private Button reloadBtn;
@@ -88,28 +89,18 @@ public class AddressManagerActivity extends BaseActivity implements AddressManag
 
 
     @Override
-    public void hideAll() {
-        normalView.setVisibility(View.INVISIBLE);
-        errorView.setVisibility(View.INVISIBLE);
-        loadView.setVisibility(View.INVISIBLE);
+    public View getNormalView() {
+        return normalView;
     }
 
     @Override
-    public void showNormal() {
-        hideAll();
-        normalView.setVisibility(View.VISIBLE);
+    public View getErrorView() {
+        return errorView;
     }
 
     @Override
-    public void showLoading() {
-        hideAll();
-        loadView.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void showError() {
-        hideAll();
-        errorView.setVisibility(View.VISIBLE);
+    public View getLoadingView() {
+        return loadView;
     }
 
     @Override

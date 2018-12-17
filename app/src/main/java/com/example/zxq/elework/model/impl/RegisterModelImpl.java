@@ -1,9 +1,7 @@
 package com.example.zxq.elework.model.impl;
 
-import android.app.DownloadManager;
-
 import com.example.zxq.elework.domain.UserDO;
-import com.example.zxq.elework.listener.OnModelFinishedListener;
+import com.example.zxq.elework.model.listener.OnModelFinishedListener;
 import com.example.zxq.elework.model.RegisterModel;
 import com.example.zxq.elework.result.Result;
 import com.example.zxq.elework.utils.UrlUtil;

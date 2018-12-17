@@ -33,7 +33,7 @@ public class MyTabFragment extends Fragment implements MyTabView{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        fragmentView = inflater.inflate(R.layout.activity_my_tab, container, false);
+        fragmentView = inflater.inflate(R.layout.fragment_my_tab, container, false);
         //初始化组件
         initWidget();
         //展示用户信息

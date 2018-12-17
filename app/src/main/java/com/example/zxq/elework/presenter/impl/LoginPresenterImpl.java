@@ -2,12 +2,10 @@ package com.example.zxq.elework.presenter.impl;
 
 import com.example.zxq.elework.application.MyApplication;
 import com.example.zxq.elework.domain.UserDO;
-import com.example.zxq.elework.listener.AbstractOnModelFinishedListener;
-import com.example.zxq.elework.listener.OnModelFinishedListener;
+import com.example.zxq.elework.model.listener.AbstractOnModelFinishedListener;
 import com.example.zxq.elework.model.LoginModel;
 import com.example.zxq.elework.model.impl.LoginModelImpl;
 import com.example.zxq.elework.presenter.LoginPresenter;
-import com.example.zxq.elework.utils.StringUtil;
 import com.example.zxq.elework.utils.ValidatorUtil;
 import com.example.zxq.elework.view.LoginView;
 

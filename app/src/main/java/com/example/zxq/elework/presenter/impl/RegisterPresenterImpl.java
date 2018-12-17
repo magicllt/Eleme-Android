@@ -1,7 +1,7 @@
 package com.example.zxq.elework.presenter.impl;
 
 import com.example.zxq.elework.domain.UserDO;
-import com.example.zxq.elework.listener.AbstractOnModelFinishedListener;
+import com.example.zxq.elework.model.listener.AbstractOnModelFinishedListener;
 import com.example.zxq.elework.model.RegisterModel;
 import com.example.zxq.elework.model.impl.RegisterModelImpl;
 import com.example.zxq.elework.presenter.RegisterPresenter;

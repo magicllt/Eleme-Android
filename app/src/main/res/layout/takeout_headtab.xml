@@ -1,393 +1,415 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <!--背景自设 最新版没有背景图片了-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <!--顶上第一行 地址还有扫码天气等UI-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
 
-                    <!--地址UI-->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="5dp"
-                            android:src="@drawable/address_position_icon" />
-
-                        <TextView
-                            android:id="@+id/head_position"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="5dp"
-                            android:background="#1Affffff"
-                            android:editable="false"
-                            android:ellipsize="end"
-                            android:maxEms="8"
-                            android:text="浙江省杭州市临安区" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:src="@drawable/re_pop_arrow_down" />
-
-                    </LinearLayout>
-
-                    <!--扫码和天气UI-->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <!--图标大小通过java中的setCompoundDrawablesWithIntrinsicBounds来控制-->
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:src="@drawable/sp_icon_scan_qr_code" />
-
-                        <TextView
-                            android:id="@+id/saoma_icon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_gravity="center_vertical"
-                            android:layout_margin="5dp"
-                            android:background="#1Affffff"
-                            android:text="扫码" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:drawableLeft="@drawable/re_icon_ice"
-                            android:gravity="center"
-                            android:text="13℃" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-                <!--搜索框-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <include layout="@layout/inputtext_circle"></include>
-                </LinearLayout>
-
-                <!--循环播放广告栏ViewPager 此坑待填 先放在这里-->
-
-                <!--一堆图标的分店入口UI 后期高仿的话可能外面要再嵌套一层布局 以实现滑动选项卡的效果-->
+                <!--背景自设 最新版没有背景图片了-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
-                    <!--第一行  5个一行-->
+                    <!--顶上第一行 地址还有扫码天气等UI-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingBottom="10dp">
+                        android:layout_margin="5dp">
 
-                        <!--单个元素-->
-                        <!--美食-->
+                        <!--地址UI-->
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/address_position_icon" />
+
+                            <TextView
+                                android:id="@+id/head_position"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:background="#1Affffff"
+                                android:editable="false"
+                                android:ellipsize="end"
+                                android:maxEms="8"
+                                android:text="浙江省杭州市临安区" />
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:background="#1Affffff"
-                                android:src="@drawable/good_1" />
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/re_pop_arrow_down" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="5dp"
-                                android:background="#1Affffff"
-                                android:text="美食" />
                         </LinearLayout>
 
-                        <!--炸鸡汉堡-->
+                        <!--扫码和天气UI-->
                         <LinearLayout
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
 
+                            <!--图标大小通过java中的setCompoundDrawablesWithIntrinsicBounds来控制-->
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/sp_icon_scan_qr_code" />
+
+                            <TextView
+                                android:id="@+id/saoma_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_margin="5dp"
                                 android:background="#1Affffff"
-                                android:src="@drawable/good_2" />
+                                android:text="扫码" />
 
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="5dp"
-                                android:background="#1Affffff"
-                                android:text="炸鸡汉堡" />
+                                android:layout_height="match_parent"
+                                android:drawableLeft="@drawable/re_icon_ice"
+                                android:gravity="center"
+                                android:text="13℃" />
                         </LinearLayout>
 
-                        <!--饮料-->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:background="#1Affffff"
-                                android:src="@drawable/good_3" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="5dp"
-                                android:background="#1Affffff"
-                                android:text="饮料" />
-                        </LinearLayout>
-
-                        <!--美食-->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:background="#1Affffff"
-                                android:src="@drawable/good_1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="5dp"
-                                android:background="#1Affffff"
-                                android:text="美食" />
-                        </LinearLayout>
-
-                        <!--美食-->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:background="#1Affffff"
-                                android:src="@drawable/good_1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="5dp"
-                                android:background="#1Affffff"
-                                android:text="美食" />
-                        </LinearLayout>
 
                     </LinearLayout>
 
-                    <!--第二行  5个一行-->
+                    <!--搜索框-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <include layout="@layout/inputtext_circle"></include>
+                    </LinearLayout>
+
+                    <!--循环播放广告栏ViewPager 此坑待填 先放在这里-->
+
+                    <!--一堆图标的分店入口UI 后期高仿的话可能外面要再嵌套一层布局 以实现滑动选项卡的效果-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <!--单个元素-->
-                        <!--美食-->
+                        <!--第一行  5个一行-->
                         <LinearLayout
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingBottom="10dp">
 
-                            <ImageView
-                                android:layout_width="wrap_content"
+                            <!--单个元素-->
+                            <!--美食-->
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:background="#1Affffff"
-                                android:src="@drawable/good_1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
                                 android:layout_margin="5dp"
-                                android:background="#1Affffff"
-                                android:text="美食" />
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="#1Affffff"
+                                    android:src="@drawable/good_1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="5dp"
+                                    android:background="#1Affffff"
+                                    android:text="美食" />
+                            </LinearLayout>
+
+                            <!--炸鸡汉堡-->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="#1Affffff"
+                                    android:src="@drawable/good_2" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="5dp"
+                                    android:background="#1Affffff"
+                                    android:text="炸鸡汉堡" />
+                            </LinearLayout>
+
+                            <!--饮料-->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="#1Affffff"
+                                    android:src="@drawable/good_3" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="5dp"
+                                    android:background="#1Affffff"
+                                    android:text="饮料" />
+                            </LinearLayout>
+
+                            <!--美食-->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="#1Affffff"
+                                    android:src="@drawable/good_5" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="5dp"
+                                    android:background="#1Affffff"
+                                    android:text="水果" />
+                            </LinearLayout>
+
+                            <!--美食-->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="#1Affffff"
+                                    android:src="@drawable/good_6" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="5dp"
+                                    android:background="#1Affffff"
+                                    android:text="炸鸡" />
+                            </LinearLayout>
+
                         </LinearLayout>
 
-                        <!--炸鸡汉堡-->
+                        <!--第二行  5个一行-->
                         <LinearLayout
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
-                            <ImageView
-                                android:layout_width="wrap_content"
+                            <!--单个元素-->
+                            <!--美食-->
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:background="#1Affffff"
-                                android:src="@drawable/good_2" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
                                 android:layout_margin="5dp"
-                                android:background="#1Affffff"
-                                android:text="炸鸡汉堡" />
-                        </LinearLayout>
+                                android:layout_weight="1"
+                                android:orientation="vertical">
 
-                        <!--饮料-->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="#1Affffff"
+                                    android:src="@drawable/good_1" />
 
-                            <ImageView
-                                android:layout_width="wrap_content"
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="5dp"
+                                    android:background="#1Affffff"
+                                    android:text="美食" />
+                            </LinearLayout>
+
+                            <!--炸鸡汉堡-->
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:background="#1Affffff"
-                                android:src="@drawable/good_3" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
                                 android:layout_margin="5dp"
-                                android:background="#1Affffff"
-                                android:text="饮料" />
-                        </LinearLayout>
+                                android:layout_weight="1"
+                                android:orientation="vertical">
 
-                        <!--美食-->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="#1Affffff"
+                                    android:src="@drawable/good_2" />
 
-                            <ImageView
-                                android:layout_width="wrap_content"
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="5dp"
+                                    android:background="#1Affffff"
+                                    android:text="炸鸡汉堡" />
+                            </LinearLayout>
+
+                            <!--饮料-->
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:background="#1Affffff"
-                                android:src="@drawable/good_1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
                                 android:layout_margin="5dp"
-                                android:background="#1Affffff"
-                                android:text="美食" />
-                        </LinearLayout>
+                                android:layout_weight="1"
+                                android:orientation="vertical">
 
-                        <!--美食-->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="#1Affffff"
+                                    android:src="@drawable/good_3" />
 
-                            <ImageView
-                                android:layout_width="wrap_content"
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="5dp"
+                                    android:background="#1Affffff"
+                                    android:text="饮料" />
+                            </LinearLayout>
+
+                            <!--美食-->
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:background="#1Affffff"
-                                android:src="@drawable/good_1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
                                 android:layout_margin="5dp"
-                                android:background="#1Affffff"
-                                android:text="美食" />
-                        </LinearLayout>
+                                android:layout_weight="1"
+                                android:orientation="vertical">
 
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="#1Affffff"
+                                    android:src="@drawable/good_5" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="5dp"
+                                    android:background="#1Affffff"
+                                    android:text="水果" />
+                            </LinearLayout>
+
+                            <!--美食-->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="#1Affffff"
+                                    android:src="@drawable/good_6" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="5dp"
+                                    android:background="#1Affffff"
+                                    android:text="炸鸡" />
+                            </LinearLayout>
+
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:paddingTop="20dp"
+                    android:text="推荐商家"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <!--筛选栏 感觉应该和搜索栏固定 这个还不会 留坑待填-->
+                <include layout="@layout/selector" />
+
+                <!--&lt;!&ndash;商家粗略展示选项卡&ndash;&gt;-->
+                <!--<include layout="@layout/shop_roughly" />-->
+
+
             </LinearLayout>
 
-            <TextView
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/take_out_refresh_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:paddingTop="20dp"
-                android:text="推荐商家"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content">
 
-            <!--筛选栏 感觉应该和搜索栏固定 这个还不会 留坑待填-->
-            <include layout="@layout/selector" />
 
-            <!--商家粗略展示选项卡-->
-            <include layout="@layout/shop_roughly" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/take_out_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <include layout="@layout/shop_roughly" />
+                </android.support.v7.widget.RecyclerView>
 
-            <include layout="@layout/shop_roughly" />
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
+
 </LinearLayout>

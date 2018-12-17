@@ -1,7 +1,7 @@
 package com.example.zxq.elework.presenter.impl;
 
 import com.example.zxq.elework.domain.AddressDO;
-import com.example.zxq.elework.listener.OnModelFinishedListener;
+import com.example.zxq.elework.model.listener.OnModelFinishedListener;
 import com.example.zxq.elework.model.AddressManagerModel;
 import com.example.zxq.elework.model.impl.AddressManagerModelImpl;
 import com.example.zxq.elework.presenter.AddressManagerPresenter;
@@ -27,24 +27,24 @@ public class AddressManagerPresenterImpl implements AddressManagerPresenter {
 
     @Override
     public void listAddress() {
-        addressManagerView.showLoading();
+        addressManagerView.showLoadingView();
         addressManagerModel.listAddress(new OnModelFinishedListener() {
             @Override
             public void success(Object obj) {
                 addressManagerView.notifyListData((List<AddressDO>)(obj));
-                addressManagerView.showNormal();
+                addressManagerView.showNromalView();
             }
 
             @Override
             public void error(String msg) {
                 addressManagerView.showMsg(msg);
-                addressManagerView.showError();
+                addressManagerView.showErrorView();
             }
 
             @Override
             public void noNet() {
                 addressManagerView.showMsg(StringUtil.NO_NETWORK);
-                addressManagerView.showError();
+                addressManagerView.showErrorView();
             }
         });
     }

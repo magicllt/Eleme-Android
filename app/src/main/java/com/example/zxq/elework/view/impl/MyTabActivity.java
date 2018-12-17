@@ -37,7 +37,7 @@ public class MyTabActivity extends BaseActivity implements MyTabView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_tab);
+        setContentView(R.layout.fragment_my_tab);
         //初始化组件
         initWidget();
         //展示用户信息

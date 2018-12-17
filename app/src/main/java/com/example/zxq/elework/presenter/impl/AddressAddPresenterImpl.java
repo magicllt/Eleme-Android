@@ -2,7 +2,7 @@ package com.example.zxq.elework.presenter.impl;
 
 import com.example.zxq.elework.application.MyApplication;
 import com.example.zxq.elework.domain.AddressDO;
-import com.example.zxq.elework.listener.AbstractOnModelFinishedListener;
+import com.example.zxq.elework.model.listener.AbstractOnModelFinishedListener;
 import com.example.zxq.elework.model.AddressAddModel;
 import com.example.zxq.elework.model.impl.AddressAddModelImpl;
 import com.example.zxq.elework.presenter.AddressAddPresenter;

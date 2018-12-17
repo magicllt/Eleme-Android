@@ -4,8 +4,7 @@ package com.example.zxq.elework.model;
  * Created by LLT on 2018/12/13.
  */
 
-import com.example.zxq.elework.listener.OnModelFinishedListener;
-import com.example.zxq.elework.presenter.LoginPresenter;
+import com.example.zxq.elework.model.listener.OnModelFinishedListener;
 
 /**
  * 登录的model层

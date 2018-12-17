@@ -9,7 +9,7 @@ import com.example.zxq.elework.application.MyApplication;
 public class UrlUtil {
 
 //    服务器url
-    private static String serverUrl = "http://" + "115.196.147.216" + ":8080";
+    private static String serverUrl = "http://" + "115.196.150.43" + ":8080";
 
 //    用户登录
     private static String userLogin = "user/login";
@@ -28,6 +28,8 @@ public class UrlUtil {
 
 //    更新地址
     private static String addressUpdate = "address/update";
+
+    private static String shopList = "shop/page?pageNum=%d&pageSize=%d";
 
     public static String getServerUrl() {return serverUrl;}
 
@@ -53,5 +55,9 @@ public class UrlUtil {
 
     public static String getUserRegister() {
         return userRegister;
+    }
+
+    public static String getShopList(int pageNum, int pageSize) {
+        return String.format(shopList, pageNum, pageSize);
     }
 }

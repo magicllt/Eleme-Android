@@ -2,7 +2,7 @@ package com.example.zxq.elework.model.impl;
 
 
 import com.example.zxq.elework.domain.AddressDO;
-import com.example.zxq.elework.listener.OnModelFinishedListener;
+import com.example.zxq.elework.model.listener.OnModelFinishedListener;
 import com.example.zxq.elework.model.AddressManagerModel;
 import com.example.zxq.elework.result.Result;
 import com.example.zxq.elework.utils.UrlUtil;
