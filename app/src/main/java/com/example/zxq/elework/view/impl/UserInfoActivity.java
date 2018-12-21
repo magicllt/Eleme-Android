@@ -13,11 +13,8 @@ import com.example.zxq.elework.application.MyApplication;
 import com.example.zxq.elework.domain.UserDO;
 import com.example.zxq.elework.utils.DataDealUtil;
 import com.example.zxq.elework.utils.UrlUtil;
-import com.example.zxq.elework.view.AddressManagerView;
 import com.example.zxq.elework.view.UserInfoView;
 import com.example.zxq.elework.view.base.BaseActivity;
-
-import java.net.Inet4Address;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -37,7 +34,6 @@ public class UserInfoActivity extends BaseActivity implements UserInfoView, View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
-        // TODO: 2018/12/13 用户未登录的问题
         initWidget();
         showUserInfo();
     }

@@ -2,11 +2,12 @@ package com.example.zxq.elework.domain;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Time;
 
 @Data
-public class ShopDO {
+public class ShopDO implements Serializable{
     Integer id;
     String name;
     String img;

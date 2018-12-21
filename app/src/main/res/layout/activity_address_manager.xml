@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.zxq.elework.view.impl.AddressManagerActivity">
+    tools:context="com.example.zxq.elework.view.impl.AddressManagerActivity3">
 
     <include layout="@layout/address_manager" android:id="@+id/normal"/>
     <include layout="@layout/loading" android:id="@+id/loading"/>

@@ -22,12 +22,17 @@ import com.example.zxq.elework.R;
 import com.example.zxq.elework.adapter.ShopGoodsListAdapter;
 import com.example.zxq.elework.application.MyApplication;
 import com.example.zxq.elework.domain.GoodsDO;
+import com.example.zxq.elework.domain.OrderItemAndGoodsDO;
 import com.example.zxq.elework.domain.OrderItemVO;
+import com.example.zxq.elework.domain.OrderPayParam;
 import com.example.zxq.elework.domain.OrderVo;
 import com.example.zxq.elework.domain.ShopAndGoodsDO;
+import com.example.zxq.elework.domain.ShopDO;
 import com.example.zxq.elework.presenter.ShopMainPresenter;
 import com.example.zxq.elework.presenter.impl.ShopMainPresenterImpl;
+import com.example.zxq.elework.utils.BeanUtil;
 import com.example.zxq.elework.utils.UrlUtil;
+import com.example.zxq.elework.view.OrderPayView;
 import com.example.zxq.elework.view.ShopMainView;
 import com.example.zxq.elework.view.base.AbstractStateActivity;
 import com.example.zxq.elework.widget.BounceLoadingView;
@@ -124,25 +129,27 @@ public class ShopMainActivity extends AbstractStateActivity implements ShopMainV
     };
 
     private void jumpToNewOrder() {
-        OrderVo orderVo = newOrder();
+        OrderPayParam orderPayParam = getOrderPayParam();
+        OrderPayActivity.actionStart(this, orderPayParam);
     }
 
-    private OrderVo newOrder(){
-        OrderVo orderVo = new OrderVo();
-        orderVo.setShopId(id);
-        orderVo.setUserId(MyApplication.getUser().getId());
-        orderVo.setTotalAmount(totalPrice);
-        List<OrderItemVO> orderItemVOS = new ArrayList<OrderItemVO>();
+    private OrderPayParam getOrderPayParam(){
+        OrderPayParam param = new OrderPayParam();
+        ShopDO shopDO = new ShopDO();
+        shopDO = BeanUtil.<ShopAndGoodsDO,ShopDO>modelAconvertoB(shopAndGoodsData, ShopDO.class);
+        param.setShopDO(shopDO);
+        List<OrderItemAndGoodsDO>list = new ArrayList<OrderItemAndGoodsDO>();
         for (int i = 0; i < shopAndGoodsData.getGoods().size(); ++i){
             if (goodsNumList.get(i) != 0){
-                OrderItemVO orderItemVO = new OrderItemVO();
-                orderItemVO.setGoodsId(shopAndGoodsData.getGoods().get(i).getId());
-                orderItemVO.setNum(goodsNumList.get(i));
-                orderItemVOS.add(orderItemVO);
+                OrderItemAndGoodsDO data = new OrderItemAndGoodsDO();
+                data.setGoods(shopAndGoodsData.getGoods().get(i));
+                data.setNum(goodsNumList.get(i));
+                list.add(data);
             }
         }
-        orderVo.setOrderItems(orderItemVOS);
-        return orderVo;
+        param.setGoods(list);
+        param.setTotalAmount(totalPrice);
+        return param;
     }
 
 

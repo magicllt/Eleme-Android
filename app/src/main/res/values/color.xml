@@ -294,4 +294,7 @@
 
     <color name="black">#000000</color><!--黑色 -->
 
+    <color name="backgreen">#59D178</color><!--饿了么专用背景绿 手动添加-->
+
+
 </resources>  

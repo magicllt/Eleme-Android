@@ -13,12 +13,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity2" />
         <activity
             android:name=".view.impl.LoginActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -27,14 +27,15 @@
             android:launchMode="singleTask" />
         <activity android:name=".view.base.BaseActivity" />
         <activity android:name=".view.impl.UserInfoActivity" />
-        <activity android:name=".view.impl.AddressManagerActivity" />
+        <activity android:name=".view.impl.AddressManagerActivity3" />
         <activity android:name=".view.impl.AddressAddActivity" />
         <activity android:name=".view.impl.MainActivity" />
         <activity android:name=".view.impl.MyTabActivity" />
         <activity android:name=".view.impl.JsonActivity" />
-        <activity android:name=".view.impl.ShopMainActivity">
-        </activity>
-        <activity android:name=".view.impl.OrderDetailActivity">
+        <activity android:name=".view.impl.ShopMainActivity" />
+        <activity android:name=".view.impl.OrderDetailActivity" />
+        <activity android:name=".view.impl.AddressManagerActivity" />
+        <activity android:name=".view.impl.OrderPayActivity">
         </activity>
     </application>
 

@@ -5,6 +5,10 @@ import com.google.gson.Gson;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.*;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * 实体对象转成Map
@@ -89,4 +93,16 @@ public class BeanUtil {
         Gson gson = new Gson();
         return gson.toJson(obj);
     }
+
+    public static <A, T> T modelAconvertoB(A modelA, Class<T> bClass) {
+        try {
+            Gson gson = new Gson();
+            String gsonA = gson.toJson(modelA);
+            T instanceB = gson.fromJson(gsonA, bClass);
+            return instanceB;
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }
+
