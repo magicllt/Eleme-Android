@@ -5,6 +5,8 @@ import android.widget.Toast;
 import com.example.zxq.elework.application.MyApplication;
 import com.example.zxq.elework.result.Result;
 
+import okhttp3.FormBody;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -30,6 +32,20 @@ public class HttpUtil {
                 .url(address)
                 .post(body)
                 .build();
+        client.newCall(request).enqueue(callback);
+    }
+
+    public static void sendJsonRequest(String address, Object obj, okhttp3.Callback callback){
+        OkHttpClient client = new OkHttpClient();
+        String json = BeanUtil.object2Json(obj);
+        RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8")
+                , json);
+        //创建一个请求对象
+        Request request = new Request.Builder()
+                .url(address)
+                .post(requestBody)
+                .build();
+        //发送请求获取响应
         client.newCall(request).enqueue(callback);
     }
 

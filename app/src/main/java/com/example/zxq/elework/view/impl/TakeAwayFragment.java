@@ -103,6 +103,6 @@ public class TakeAwayFragment extends Fragment implements TakeAwayView {
 
     @Override
     public void jumpToShopDetail(int id) {
-
+        ShopMainActivity.actionStart(context, id);
     }
 }

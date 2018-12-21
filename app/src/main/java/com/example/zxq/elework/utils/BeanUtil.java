@@ -1,5 +1,7 @@
 package com.example.zxq.elework.utils;
 
+import com.google.gson.Gson;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.*;
@@ -81,5 +83,10 @@ public class BeanUtil {
             e.printStackTrace();
         }
         return obj;
+    }
+
+    public static String object2Json(Object obj){
+        Gson gson = new Gson();
+        return gson.toJson(obj);
     }
 }

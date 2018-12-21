@@ -78,7 +78,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopHolder>{
         public ShopHolder(View itemView, Context context) {
             super(itemView);
             this.context = context;
-            // TODO: 2018/12/17 完成组件的初始化
             this.view = itemView;
             shopImg = (ImageView)view.findViewById(R.id.shop_roughly_img);
             nameText = (TextView)view.findViewById(R.id.shop_roughly_name);

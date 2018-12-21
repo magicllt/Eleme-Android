@@ -51,14 +51,12 @@ public class TakeAwayPresenterImpl implements TakeAwayPresenter {
                 public void noNet() {
                     super.noNet();
                     takeAwayView.finishLoadMore(false);
-                    Toast.makeText(MyApplication.getContext(), StringUtil.NO_NETWORK, Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void error(String msg) {
                     super.error(msg);
                     takeAwayView.finishLoadMore(false);
-                    Toast.makeText(MyApplication.getContext(), msg, Toast.LENGTH_SHORT).show();
                 }
             });
         }else{

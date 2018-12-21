@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/shop_search_icon"
+        android:icon="@drawable/sp_search_menu_action"
+        android:title="search"
+        app:showAsAction="ifRoom"/>
+    <!--showAsAction指定图标是否根据当前空间大小来显示图标-->
+    <item
+        android:id="@+id/shop_pindan_icon"
+        android:icon="@drawable/sp_shop_detail_action_pindan"
+        android:title="pindan"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/shop_more_icon"
+        android:icon="@drawable/re_over_flow_icon_with_read_point"
+        android:title="more"
+        app:showAsAction="ifRoom"/>
+</menu>
+<!--调用这个menu需要到java代码中选择对应的toolbar对象然后调用实例的infalteMenu方法-->

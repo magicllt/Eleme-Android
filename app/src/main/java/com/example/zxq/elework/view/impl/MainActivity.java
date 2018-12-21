@@ -19,6 +19,8 @@ public class MainActivity extends BaseActivity {
 
     TakeAwayFragment takeAwayFragment = new TakeAwayFragment();
 
+    OrderListFragment orderListFragment = new OrderListFragment();
+
     MyTabFragment myTabFragment = new MyTabFragment();
 
 
@@ -32,7 +34,7 @@ public class MainActivity extends BaseActivity {
                     replaceFragment(takeAwayFragment);
                     return true;
                 case R.id.menu_bottom_tools_order:
-                    replaceFragment(takeAwayFragment);
+                    replaceFragment(orderListFragment);
                     return true;
                 case R.id.menu_bottom_tools_personal:
                     replaceFragment(myTabFragment);

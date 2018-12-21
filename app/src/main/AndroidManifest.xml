@@ -24,14 +24,18 @@
         </activity>
         <activity
             android:name=".view.impl.RegisterActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
         <activity android:name=".view.base.BaseActivity" />
         <activity android:name=".view.impl.UserInfoActivity" />
         <activity android:name=".view.impl.AddressManagerActivity" />
         <activity android:name=".view.impl.AddressAddActivity" />
-        <activity android:name=".view.impl.MainActivity">
+        <activity android:name=".view.impl.MainActivity" />
+        <activity android:name=".view.impl.MyTabActivity" />
+        <activity android:name=".view.impl.JsonActivity" />
+        <activity android:name=".view.impl.ShopMainActivity">
         </activity>
-        <activity android:name=".view.impl.MyTabActivity"></activity>
+        <activity android:name=".view.impl.OrderDetailActivity">
+        </activity>
     </application>
 
 </manifest>

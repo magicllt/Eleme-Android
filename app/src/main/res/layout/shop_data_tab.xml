@@ -24,6 +24,7 @@
                 android:textSize="15dp" />
 
             <ImageView
+                android:id="@+id/shop_data_tab_shop_img"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/fish" />
@@ -63,6 +64,7 @@
                     android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/shop_data_tab_shop_name_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -88,6 +90,7 @@
                     android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/shop_data_tab_category_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -113,6 +116,7 @@
                     android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/shop_data_tab_address_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="right"
@@ -138,6 +142,7 @@
                     android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/shop_data_tab_shop_phone_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -170,6 +175,7 @@
                     android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/shop_data_tab_run_time_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"

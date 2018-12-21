@@ -17,7 +17,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         TAG = getClass().getSimpleName();
         //取消顶部条
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
         ActivityController.addActivity(this);
     }
 

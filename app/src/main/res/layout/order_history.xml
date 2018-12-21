@@ -1,28 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?><!--历史订单-->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="历史订单"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <include layout="@layout/order_item" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="历史订单"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
-        <include layout="@layout/order_item" />
+            <!--listItem-->
+            <!--<include layout="@layout/order_item" />-->
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/order_history_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <include layout="@layout/order_item" />
 
-        <include layout="@layout/order_item" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/order_history_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-        <include layout="@layout/order_item" />
-    </LinearLayout>
-</ScrollView>
+                </android.support.v7.widget.RecyclerView>
+
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

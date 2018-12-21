@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="5dp"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--商品图片-->
+    <ImageView
+        android:id="@+id/order_goods_goods_img"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/fish" />
+
+    <!--商品名称-->
+    <TextView
+        android:id="@+id/order_goods_goods_name_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="小鸡腿+金针菇+饭"
+        android:textColor="@color/black"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/order_goods_goods_cnt_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="x1"
+        android:textColor="@color/black"
+        android:textSize="10dp" />
+
+    <!--单项商品总计-->
+    <TextView
+        android:id="@+id/order_goods_money_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="￥48.5"
+        android:textColor="@color/black"
+        android:textSize="10dp" />
+</LinearLayout>
