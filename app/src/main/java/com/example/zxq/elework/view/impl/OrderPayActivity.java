@@ -163,7 +163,7 @@ public class OrderPayActivity extends BaseActivity implements OrderPayView {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(OrderPayActivity.this, "success", Toast.LENGTH_SHORT).show();
+                PaySuccessActivity.actionStart(OrderPayActivity.this);
             }
         });
     }

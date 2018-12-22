@@ -22,7 +22,6 @@ public class ShopGoodsListFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        Toast.makeText(context, "attach", Toast.LENGTH_SHORT).show();
     }
 
     @Override
