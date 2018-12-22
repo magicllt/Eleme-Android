@@ -15,6 +15,7 @@ import com.example.zxq.elework.R;
 import com.example.zxq.elework.adapter.OrderItemAdapter;
 import com.example.zxq.elework.domain.OrderDetailDO;
 import com.example.zxq.elework.domain.OrderItemAndGoodsDO;
+import com.example.zxq.elework.domain.OrderPayParam;
 import com.example.zxq.elework.presenter.OrderDetailPresenter;
 import com.example.zxq.elework.presenter.impl.OrderDetailPresenterImpl;
 import com.example.zxq.elework.utils.DataDealUtil;
@@ -77,6 +78,7 @@ public class OrderDetailActivity extends AbstractStateActivity implements OrderD
 
         shopNameText = (TextView)findViewById(R.id.order_detail_shop_name_text);
         orderAgainBtn = (Button)findViewById(R.id.order_detail_order_again);
+        orderAgainBtn.setOnClickListener(onClickListener);
         goodsList = (RecyclerView)findViewById(R.id.order_detail_goods_list);
         moneyText = (TextView)findViewById(R.id.order_detail_money_text);
         addressHouseText = (TextView)findViewById(R.id.order_detail_address_house_text);
@@ -97,9 +99,22 @@ public class OrderDetailActivity extends AbstractStateActivity implements OrderD
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            getOrderDetail();
+            if (view == reloadBtn){
+                getOrderDetail();
+                return;
+            }else if (view == orderAgainBtn){
+                jumpToOrderAgin();
+            }
         }
     };
+
+    private void jumpToOrderAgin() {
+        OrderPayParam param = new OrderPayParam();
+        param.setShopDO(orderDetailDO.getShop());
+        param.setTotalAmount(orderDetailDO.getTotalAmount());
+        param.setGoods(orderDetailDO.getOrderItems());
+        OrderPayActivity.actionStart(this, param);
+    }
 
     private void setLoadingViewParam() {
         loadingView.addBitmap(R.mipmap.loading4);
