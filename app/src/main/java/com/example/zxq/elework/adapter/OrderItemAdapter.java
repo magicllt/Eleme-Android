@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * Created by LLT on 2018/12/20.
+ * 订单详情里面商品列表的适配器
  */
 
 public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.OrderItemHolder> {
@@ -39,22 +40,38 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.Orde
         return holder;
     }
 
+    /**
+     * 在列表中获取数据，将数据和ViewHolder进行绑定
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(OrderItemHolder holder, int position) {
         OrderItemAndGoodsDO data = list.get(position);
         holder.setData(data);
     }
 
+    /**
+     * 返回数据的个数
+     * @return
+     */
     @Override
     public int getItemCount() {
         return list.size();
     }
 
+    /**
+     * 给列表添加数据
+     * @param list
+     */
     public void addData(List<OrderItemAndGoodsDO> list){
         this.list.addAll(list);
         notifyDataSetChanged();
     }
 
+    /**
+     * ViewHolder代码
+     */
     static class OrderItemHolder extends RecyclerView.ViewHolder{
 
         private final View view;
@@ -75,6 +92,10 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.Orde
             goodsMoney = (TextView)view.findViewById(R.id.order_goods_money_text);
         }
 
+        /**
+         * 完成ViewHolder数据的显示
+         * @param data
+         */
         void setData(OrderItemAndGoodsDO data){
             this.data = data;
             Glide.with(context).load(UrlUtil.getImageUrl(data.getGoods().getImg())).into(goodsImg);

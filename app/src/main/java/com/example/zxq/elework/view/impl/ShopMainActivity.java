@@ -41,22 +41,33 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * ShopMainView的实现类
+ */
 public class ShopMainActivity extends AbstractStateActivity implements ShopMainView {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private Toolbar toolbar;
+    /// tabView的title
     private String[] titles = new String[]{"点餐", "商家"};
+    /// 碎片数组
     Fragment[] fragments = new Fragment[2];
 
+    /// 店铺id的tag
     static String ID_TAG = "id";
 
+    /// 店铺id
     int id;
 
+    /// 正常界面
     private View normalView;
+    /// 异常界面
     private View errorView;
+    /// 加载界面
     private View loadView;
 
+    /// 加载动画对应的组件
     private BounceLoadingView loadingView;
     private Button reloadBtn;
 
@@ -68,12 +79,21 @@ public class ShopMainActivity extends AbstractStateActivity implements ShopMainV
     private TextView payInvalidText;
     private TextView payValidText;
 
+    /// 商家的详细信息
     ShopAndGoodsDO shopAndGoodsData;
     private ShopMainPresenter shopMainPresenter;
+    /// 每件商品的数量
     private List<Integer> goodsNumList;
+    /// 总价
     private BigDecimal totalPrice;
+    /// 当前购物车中商品的数量
     private int goodsNum;
 
+    /**
+     * 活动的启动接口
+     * @param context 上下文
+     * @param id 店铺id
+     */
     static public void actionStart(Context context, int id){
         Intent intent = new Intent(context, ShopMainActivity.class);
         intent.putExtra(ID_TAG, id);
@@ -84,16 +104,22 @@ public class ShopMainActivity extends AbstractStateActivity implements ShopMainV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_main);
+        /// 获取店铺id
         id = getIntent().getIntExtra(ID_TAG, 0);
         Toolbar toolbar = (Toolbar) findViewById(R.id.shop_menu_toolbar);
         setSupportActionBar(toolbar);
+        /// 设置总价位0
         totalPrice = new BigDecimal(0);
+        /// 设置商品数目为0
         goodsNum = 0;
         initWidget();
         shopMainPresenter = new ShopMainPresenterImpl(this);
         getShopAndGoods();
     }
 
+    /**
+     * 初始化组件，设置监听器
+     */
     private void initWidget(){
         normalView = (View)findViewById(R.id.activity_shop_main_normal_view);
         errorView = (View)findViewById(R.id.activity_shop_main_error_view);
@@ -116,6 +142,13 @@ public class ShopMainActivity extends AbstractStateActivity implements ShopMainV
         cartEmptyState();
     }
 
+    /**
+     * 点击的监听器
+     * 1. reloadBtn:
+     *      调用getShopAndGoods()重新获取数据
+     * 2. payValidText:
+     *      调用jumpToNewOrder（）切换到订单支付界面
+     */
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -128,11 +161,19 @@ public class ShopMainActivity extends AbstractStateActivity implements ShopMainV
         }
     };
 
+    /**
+     * 跳转到订单支付界面
+     */
     private void jumpToNewOrder() {
+        /// 获取当前的订单参数，转为需要的pojo
         OrderPayParam orderPayParam = getOrderPayParam();
         OrderPayActivity.actionStart(this, orderPayParam);
     }
 
+    /**
+     * 获取订单pojo
+     * @return 转化好的可以提交的订单的pojo
+     */
     private OrderPayParam getOrderPayParam(){
         OrderPayParam param = new OrderPayParam();
         ShopDO shopDO = new ShopDO();

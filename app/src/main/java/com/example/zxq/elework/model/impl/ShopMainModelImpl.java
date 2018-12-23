@@ -14,13 +14,20 @@ import retrofit2.Call;
 
 /**
  * Created by LLT on 2018/12/20.
+ * ShopMainModel的实现类
  */
-
 public class ShopMainModelImpl implements ShopMainModel {
 
+    /**
+     * 获取店铺信息个商品信息
+     * @param id 店铺id
+     * @param listener 监听器
+     */
     @Override
     public void getShopAndGoods(int id, final OnModelFinishedListener listener) {
+        /// 构建请求
         Request request = ItheimaHttp.newGetRequest(UrlUtil.getShopAndGoods(id));
+        /// 发送请求
         Call call = ItheimaHttp.send(request, new HttpResponseListener<Result<ShopAndGoodsDO>>(){
             @Override
             public void onResponse(Result<ShopAndGoodsDO> result) {

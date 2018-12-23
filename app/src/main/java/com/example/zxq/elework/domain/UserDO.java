@@ -5,6 +5,9 @@ import java.io.Serializable;
 import lombok.Data;
 
 
+/**
+ * 用户信息的pojo
+ */
 @Data
 public class UserDO implements Serializable{
     private Integer id;

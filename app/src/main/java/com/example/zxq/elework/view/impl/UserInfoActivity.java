@@ -18,6 +18,9 @@ import com.example.zxq.elework.view.base.BaseActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+/**
+ * UserInfoView的实现类
+ */
 public class UserInfoActivity extends BaseActivity implements UserInfoView, View.OnClickListener{
 
     private CircleImageView userAvatarImageView;
@@ -25,6 +28,10 @@ public class UserInfoActivity extends BaseActivity implements UserInfoView, View
     private View addressView;
     private TextView userPhoneTextView;
 
+    /**
+     * 活动的启动接口
+     * @param context 上下文
+     */
     public static void actionStart(Context context){
         Intent intent = new Intent(context, UserInfoActivity.class);
         context.startActivity(intent);
@@ -38,6 +45,9 @@ public class UserInfoActivity extends BaseActivity implements UserInfoView, View
         showUserInfo();
     }
 
+    /**
+     * 展示用户信息
+     */
     @Override
     public void showUserInfo() {
         UserDO userDO = MyApplication.getUser();
@@ -46,6 +56,9 @@ public class UserInfoActivity extends BaseActivity implements UserInfoView, View
         userPhoneTextView.setText(DataDealUtil.dealTelephone(userDO.getPhone()));
     }
 
+    /**
+     * 初始化界面并设置监听器
+     */
     private void initWidget() {
         userAvatarImageView = (CircleImageView)findViewById(R.id.mine_data_user_avatar);
         userNameTextView = (TextView)findViewById(R.id.mine_data_user_name);
@@ -55,6 +68,12 @@ public class UserInfoActivity extends BaseActivity implements UserInfoView, View
         addressView.setOnClickListener(this);
     }
 
+    /**
+     * 监听器diamante
+     * @param view
+     * 1. addressView
+     *      切换到地址管理活动
+     */
     @Override
     public void onClick(View view) {
         if (view == addressView){
@@ -62,6 +81,10 @@ public class UserInfoActivity extends BaseActivity implements UserInfoView, View
         }
     }
 
+    /**
+     * 展示消息
+     * @param msg 消息
+     */
     @Override
     public void showMsg(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();

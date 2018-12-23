@@ -7,7 +7,7 @@ import java.sql.Time;
 import java.util.List;
 
 /**
- * 数据表shop的映射类
+ * 店铺信息和商品列表的pojo
  */
 @Data
 public class ShopAndGoodsDO {

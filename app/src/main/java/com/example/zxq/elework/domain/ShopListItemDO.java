@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.sql.Time;
 
 /**
- * 店铺简略信息的数据映射类
+ * 店铺简略信息的pojo
  */
 @Data
 public class ShopListItemDO {

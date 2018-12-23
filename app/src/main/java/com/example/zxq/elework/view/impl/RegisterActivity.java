@@ -20,6 +20,10 @@ import com.example.zxq.elework.view.base.BaseActivity;
 
 import java.net.Inet4Address;
 
+/**
+ * RegisterView的实现类
+ */
+
 public class RegisterActivity extends BaseActivity implements RegisterView {
 
     private EditText phoneEdit;
@@ -29,6 +33,10 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
     private RegisterPresenter registerPresenter;
     private TextView clearText;
 
+    /**
+     * 活动的启动接口
+     * @param context 上下文
+     */
     static void actionStart(Context context){
         Intent intent = new Intent(context, RegisterActivity.class);
         context.startActivity(intent);
@@ -42,6 +50,9 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
         registerPresenter = new RegisterPresenterImpl(this);
     }
 
+    /**
+     * 初始化组件，设置监听器
+     */
     private void initWidget() {
         phoneEdit = (EditText)findViewById(R.id.register_user_id);
         pwdEdit = (EditText)findViewById(R.id.register_user_pasaword);
@@ -52,6 +63,12 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
         clearText.setOnClickListener(onClickListener);
     }
 
+    /**
+     * 点击的监听器
+     * 1.registerBtn:
+     *      调用registerPresenter.register()进行注册
+     * 2. clearText: 清空输入框
+     */
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -68,11 +85,18 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
         }
     };
 
+    /**
+     * 展示消息
+     * @param msg 消息
+     */
     @Override
     public void showMsg(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 清空输入文本的数据
+     */
     @Override
     public void clearEdit() {
         phoneEdit.setText("");
@@ -80,6 +104,10 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
         pwd2Edit.setText("");
     }
 
+    /**
+     * 注册成功时候调用
+     * @param userDO 用户的信息
+     */
     @Override
     public void registerSuccess(UserDO userDO) {
         LoginActivity.ActionStart(this);

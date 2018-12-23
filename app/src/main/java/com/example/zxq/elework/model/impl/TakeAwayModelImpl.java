@@ -15,13 +15,21 @@ import retrofit2.Call;
 
 /**
  * Created by LLT on 2018/12/17.
+ * TakeAwayModel的实现类
  */
-
 public class TakeAwayModelImpl implements TakeAwayModel {
 
+    /**
+     * 加载更多的数据
+     * @param page 页号
+     * @param size 页大小
+     * @param listener 监听器
+     */
     @Override
     public void loadMoreData(int page, int size, final OnModelFinishedListener listener) {
+        /// 构建请求
         Request request = ItheimaHttp.newGetRequest(UrlUtil.getShopList(page, size));
+        /// 发送请求
         Call call = ItheimaHttp.send(request, new HttpResponseListener<Result<PageInfoBreif<ShopListItemDO>>>(){
 
             @Override

@@ -15,13 +15,20 @@ import retrofit2.Call;
 
 /**
  * Created by LLT on 2018/12/20.
+ * OrderDetailModel的实现类
  */
-
 public class OrderDetailModelImpl implements OrderDetailModel {
-    
+
+    /**
+     * 获取订单详情
+     * @param id 订单的id
+     * @param listener 监听器
+     */
     @Override
     public void getOrderDrtail(int id, final OnModelFinishedListener listener) {
+        /// 构建请求
         Request request = ItheimaHttp.newGetRequest(UrlUtil.getOrderDetail(id));
+        /// 发起请求，传入监听器
         Call call = ItheimaHttp.send(request, new HttpResponseListener<Result<OrderDetailDO>>() {
             @Override
             public void onResponse(Result<OrderDetailDO> result) {

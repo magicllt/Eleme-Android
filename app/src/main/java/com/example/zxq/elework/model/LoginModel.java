@@ -13,8 +13,9 @@ public interface LoginModel {
 
     /**
      * 登录
-     * @param phone
-     * @param pwd
+     * @param phone 手机号
+     * @param pwd 密码
+     * @param listener 监听器
      */
     void login(String phone, String pwd, OnModelFinishedListener listener);
 

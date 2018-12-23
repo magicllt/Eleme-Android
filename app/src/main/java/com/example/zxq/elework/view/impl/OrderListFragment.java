@@ -25,6 +25,9 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * OrderListView的实现类
+ */
 public class OrderListFragment extends Fragment implements OrderListView{
 
     private View fragmentView;
@@ -46,6 +49,9 @@ public class OrderListFragment extends Fragment implements OrderListView{
         return fragmentView;
     }
 
+    /**
+     * 初始化组件，设置事件监听器
+     */
     private void initWidget() {
         refreshLayout = (SmartRefreshLayout)fragmentView.findViewById(R.id.order_history_refresh_layout);
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
@@ -68,6 +74,9 @@ public class OrderListFragment extends Fragment implements OrderListView{
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * 新建订单列表项的点击事件
+     */
     OrderListAdapter.OrderListListener orderListListener = new OrderListAdapter.OrderListListener() {
         @Override
         public void onOrderItemClick(int id) {
@@ -75,11 +84,19 @@ public class OrderListFragment extends Fragment implements OrderListView{
         }
     };
 
+    /**
+     * 展示消息
+     * @param msg 消息
+     */
     @Override
     public void showMsg(String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 判断加载是否成功
+     * @param isSuccess 是否加载成功
+     */
     @Override
     public void finishLoadMore(boolean isSuccess) {
         if (isSuccess){
@@ -91,16 +108,27 @@ public class OrderListFragment extends Fragment implements OrderListView{
         }
     }
 
+    /**
+     * 设置refreshLayout为没有更多数据可以加载
+     */
     @Override
     public void finsihLoadMoreWithoutMoreData() {
         refreshLayout.finishLoadMoreWithNoMoreData();
     }
 
+    /**
+     * 给适配器添加数据
+     * @param object 添加的数据
+     */
     @Override
     public void addData(Object object) {
         adapter.addData((List<OrderListItemBO>)(object));
     }
 
+    /**
+     * 跳转到订单详情
+     * @param id 订单的id
+     */
     @Override
     public void jumpToOrderDetail(int id) {
         OrderDetailActivity.actionStart(context, id);

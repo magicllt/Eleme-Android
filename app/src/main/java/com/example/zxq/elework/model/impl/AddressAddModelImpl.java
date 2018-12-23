@@ -17,14 +17,23 @@ import retrofit2.Call;
 
 /**
  * Created by LLT on 2018/12/14.
+ * 添加地址的model实现类
  */
 
 public class AddressAddModelImpl implements AddressAddModel {
+
+    /**
+     * 保存地址
+     * @param addressDO 地址
+     * @param listener 监听器
+     */
     @Override
     public void saveAddress(final AddressDO addressDO, final OnModelFinishedListener listener) {
+        /// 构建请求，出入url，参数
         Request request = ItheimaHttp.newPostRequest(UrlUtil.getAddressSave());
         Map<String, Object>map = BeanUtil.object2MapWithoutNull(addressDO);
         request.putParamsMap(map);
+        /// 发送请求，传入监听器
         Call call = ItheimaHttp.send(request, new HttpResponseListener<Result<Integer>>(){
             @Override
             public void onResponse(Result<Integer> result) {
@@ -44,11 +53,18 @@ public class AddressAddModelImpl implements AddressAddModel {
 
     }
 
+    /**
+     * 更新地址
+     * @param addressDO 地址
+     * @param listener 监听器
+     */
     @Override
     public void updateAddress(final AddressDO addressDO, final OnModelFinishedListener listener) {
+        /// 构建请求
         Request request = ItheimaHttp.newPostRequest(UrlUtil.getAddressUpdate());
         Map<String, Object>map = BeanUtil.object2MapWithoutNull(addressDO);
         request.putParamsMap(map);
+        /// 发送请求，传入监听器
         Call call = ItheimaHttp.send(request, new HttpResponseListener<Result<Boolean>>() {
             @Override
             public void onResponse(Result<Boolean> result) {

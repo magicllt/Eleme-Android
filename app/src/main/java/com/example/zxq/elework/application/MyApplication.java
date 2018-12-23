@@ -12,6 +12,7 @@ import com.itheima.retrofitutils.ItheimaHttp;
 
 /**
  * Created by LLT on 2018/11/29.
+ * 本项目的Application
  */
 
 public class MyApplication extends Application{
@@ -31,43 +32,68 @@ public class MyApplication extends Application{
         ItheimaHttp.init(this, UrlUtil.getServerUrl());
     }
 
+    /**
+     * 返回应用的上下文
+     * @return
+     */
     public static Context getContext() {
         return context;
     }
 
+    /**
+     * 返回用户的信息
+     * @return
+     */
     public static UserDO getUser() {
+        /// 如果user为null，试着从preference中获取用户的信息
         if (MyApplication.user == null){
             setUser(loadUserFromPref());
         }
         return MyApplication.user;
     }
 
+    /**
+     * 保存用户的信息
+     * @param user
+     */
     public static void setUser(UserDO user) {
         MyApplication.user = user;
+        /// 将用户信息备份到preferences中
         saveUserToPref(user);
     }
 
+    /**
+     * 用户登出的操作
+     */
     public static void userLogout(){
-        //清空数据
+        /// 清空保存在preference中的用户数据
         SharedPreferences.Editor editor = getContext().getSharedPreferences(PREF_LOC, MODE_PRIVATE).edit();
         editor.clear().commit();
         MyApplication.user = null;
     }
 
-    //将对象保存到pref
+
+    /**
+     * 将用户信息保存到preference,用于完成用户直接登录功能
+     * @param user 用户的信息
+     */
     private static void saveUserToPref(UserDO user){
         SharedPreferences.Editor editor = getContext().getSharedPreferences(PREF_LOC, MODE_PRIVATE).edit();
+        /// 用户数据转化成json,再进行保存
         Gson gson = new Gson();
         String userString = gson.toJson(user);
         editor.putString(USER_TAG, userString);
         editor.apply();
     }
 
-    //从pref里面导出对象
+    /**
+     * 从preference中导出用户的信息
+     * @return 从preference中导出用户数据
+     */
     private static UserDO loadUserFromPref(){
         SharedPreferences pref = getContext().getSharedPreferences(PREF_LOC, MODE_PRIVATE);
         String userString = pref.getString(USER_TAG, "");
-        //有用户数据就解析数据
+        /// 如果有用户数据就解析数据，将json解析成User类
         if (ValidatorUtil.isEmpty(userString) == false){
             Gson gson = new Gson();
             UserDO user = gson.fromJson(userString, UserDO.class);

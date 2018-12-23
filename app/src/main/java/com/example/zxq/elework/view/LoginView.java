@@ -16,5 +16,8 @@ public interface LoginView extends BaseView{
      */
     void clearEdit();
 
+    /**
+     * 登录成功时候调用
+     */
     void onloginSuccess();
 }

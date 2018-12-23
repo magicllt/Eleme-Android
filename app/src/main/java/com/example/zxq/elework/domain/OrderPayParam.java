@@ -6,10 +6,9 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * Created by LLT on 2018/12/21.
+/***
+ * 订单界面传入的pojo(包含Shop，Goods，总价)
  */
-
 @Data
 public class OrderPayParam implements Serializable{
     ShopDO shopDO;

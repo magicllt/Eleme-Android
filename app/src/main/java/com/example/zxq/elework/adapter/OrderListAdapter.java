@@ -19,6 +19,7 @@ import java.util.List;
 
 /**
  * Created by LLT on 2018/12/20.
+ * 订单列表的适配器
  */
 
 public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.OrderItemHolder> {
@@ -49,26 +50,45 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.Orde
         return holder;
     }
 
+    /**
+     * 完成ViewHolder和列表中某个数据的绑定
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(OrderItemHolder holder, int position) {
         OrderListItemBO item = list.get(position);
         holder.setData(item);
     }
 
+    /**
+     * 返回列表的元素的个数
+     * @return
+     */
     @Override
     public int getItemCount() {
         return list.size();
     }
 
+    /**
+     * 给列表添加元素
+     * @param list
+     */
     public void addData(List<OrderListItemBO> list){
         this.list.addAll(list);
         notifyDataSetChanged();
     }
 
+    /**
+     * 列表项点击事件的监听者
+     */
     public interface OrderListListener{
         void onOrderItemClick(int id);
     }
 
+    /**
+     * ViewHolder的代码
+     */
     static class OrderItemHolder extends RecyclerView.ViewHolder{
 
         OrderListItemBO data;
@@ -91,6 +111,10 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.Orde
             moneyText = (TextView)view.findViewById(R.id.order_item_money_text);
         }
 
+        /**
+         * 完成ViewHolder和数据的绑定
+         * @param data
+         */
         public void setData(OrderListItemBO data){
             ;this.data = data;
             Glide.with(context).load(UrlUtil.getImageUrl(data.getShop().getShopImg())).into(shopImg);

@@ -5,6 +5,9 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * 订单列表数据的pojo
+ */
 @Data
 public class OrderListItemBO {
     int id;

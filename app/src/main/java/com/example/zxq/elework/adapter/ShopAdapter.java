@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  * Created by LLT on 2018/12/17.
+ * 店铺列表的适配器
  */
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopHolder>{
@@ -49,22 +50,38 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopHolder>{
         return shopHolder;
     }
 
+    /**
+     * 完成列表中该数据和ViewHolder的绑定
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(ShopHolder holder, int position) {
         ShopListItemDO item = list.get(position);
         holder.setData(item);
     }
 
+    /**
+     * 返回列表的元素个数
+     * @return
+     */
     @Override
     public int getItemCount() {
         return list.size();
     }
 
+    /**
+     * 给列表添加元素
+     * @param list
+     */
     public void addData(List<ShopListItemDO> list) {
         this.list.addAll(list);
         notifyDataSetChanged();
     }
 
+    /**
+     * ViewHolder的类
+     */
     static class ShopHolder extends RecyclerView.ViewHolder{
 
         ShopListItemDO data;
@@ -85,6 +102,10 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopHolder>{
             salesText = (TextView)view.findViewById(R.id.shop_roughly_sales);
         }
 
+        /**
+         * 完成ViewHolder的数据绑定，数据显示到对应的组件上
+         * @param data
+         */
         public void setData(ShopListItemDO data) {
             this.data = data;
             Glide.with(context).load(UrlUtil.getImageUrl(data.getImg())).into(shopImg);

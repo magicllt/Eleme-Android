@@ -13,8 +13,8 @@ public interface LoginPresenter {
 
     /**
      * 登录
-     * @param phone
-     * @param pwd
+     * @param phone 手机号
+     * @param pwd 密码
      */
     void login(String phone, String pwd);
 }

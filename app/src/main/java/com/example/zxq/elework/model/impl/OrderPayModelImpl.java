@@ -17,12 +17,19 @@ import okhttp3.Response;
 
 /**
  * Created by LLT on 2018/12/21.
+ * OrderPayModel的实现类
  */
-
 public class OrderPayModelImpl implements OrderPayModel {
 
+    /**
+     * 提交订单
+     * @param order 订单
+     * @param listener 监听器
+     */
     @Override
     public void submitOrder(OrderVo order, final OnModelFinishedListener listener) {
+
+        /// 将参数转为json，发送请求
         HttpUtil.sendJsonRequest(UrlUtil.getOrderSave(), order, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

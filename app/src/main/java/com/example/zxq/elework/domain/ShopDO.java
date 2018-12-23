@@ -6,6 +6,9 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Time;
 
+/**
+ * 商家信息的pojo
+ */
 @Data
 public class ShopDO implements Serializable{
     Integer id;

@@ -15,15 +15,30 @@ import com.example.zxq.elework.view.base.BaseActivity;
 
 import java.net.Inet4Address;
 
+/**
+ * 主活动
+ */
 public class MainActivity extends BaseActivity {
 
+    /**
+     * 外卖 碎片
+     */
     TakeAwayFragment takeAwayFragment = new TakeAwayFragment();
 
+    /**
+     * 订单列表 碎片
+     */
     OrderListFragment orderListFragment = new OrderListFragment();
 
+    /**
+     * 我的 碎片
+     */
     MyTabFragment myTabFragment = new MyTabFragment();
 
-
+    /**
+     * BottomNavigationView的触发事件监听器
+     * 切换到对应的碎片
+     */
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -44,6 +59,10 @@ public class MainActivity extends BaseActivity {
         }
     };
 
+    /**
+     * 活动启动接口
+     * @param context 上下文
+     */
     static  public void actionStart(Context context){
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
@@ -58,6 +77,10 @@ public class MainActivity extends BaseActivity {
         navigation.setSelectedItemId(navigation.getMenu().getItem(0).getItemId());
     }
 
+    /**
+     * 切换碎片
+     * @param fragment 传入的碎片
+     */
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();

@@ -17,7 +17,9 @@ import com.example.zxq.elework.domain.ShopAndGoodsDO;
 import com.example.zxq.elework.utils.UrlUtil;
 import com.example.zxq.elework.view.ShopInfoView;
 
-
+/**
+ * ShopInfoView的实现类
+ */
 public class ShopInfoFragment extends Fragment implements ShopInfoView{
 
     private ShopAndGoodsDO data;
@@ -41,6 +43,9 @@ public class ShopInfoFragment extends Fragment implements ShopInfoView{
         return fragmentView;
     }
 
+    /**
+     * 初始化组件，完成事件绑定
+     */
     private void initWidget() {
         shopImg = (ImageView)fragmentView.findViewById(R.id.shop_data_tab_shop_img);
         nameText = (TextView)fragmentView.findViewById(R.id.shop_data_tab_shop_name_text);
@@ -50,11 +55,19 @@ public class ShopInfoFragment extends Fragment implements ShopInfoView{
         runTimeText = (TextView)fragmentView.findViewById(R.id.shop_data_tab_run_time_text);
     }
 
+    /**
+     * 显示消息
+     * @param msg 消息
+     */
     @Override
     public void showMsg(String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 展示店铺信息
+     * @param data 商家信息
+     */
     @Override
     public void showShopInfo(ShopAndGoodsDO data) {
         this.data = data;

@@ -12,8 +12,12 @@ import android.widget.Toast;
 
 import com.example.zxq.elework.R;
 import com.example.zxq.elework.adapter.ShopGoodsListAdapter;
+import com.example.zxq.elework.view.ShopGoodsListView;
 
-public class ShopGoodsListFragment extends Fragment {
+/**
+ * ShopGoodsListView的实现类
+ */
+public class ShopGoodsListFragment extends Fragment implements ShopGoodsListView{
 
     private View fragmentView;
     private Context context;
@@ -33,6 +37,9 @@ public class ShopGoodsListFragment extends Fragment {
         return fragmentView;
     }
 
+    /**
+     * 初始化界面，完成事件绑定
+     */
     private void initWidget() {
         recyclerView = (RecyclerView) fragmentView.findViewById(R.id.fragment_shop_goods_recycler_view);
         LinearLayoutManager manager = new LinearLayoutManager(context);
@@ -40,6 +47,10 @@ public class ShopGoodsListFragment extends Fragment {
         ShopMainActivity activity = (ShopMainActivity)(getActivity());
         ShopGoodsListAdapter adapter = new ShopGoodsListAdapter(activity.getGoodsList(), activity.getGoodsNumList(), activity, activity.getOnGoodsNumChangeListener());
         recyclerView.setAdapter(adapter);
-        //Toast.makeText(activity, "list show", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showMsg(String msg) {
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 }

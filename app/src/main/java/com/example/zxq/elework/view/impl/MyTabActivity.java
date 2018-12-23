@@ -21,6 +21,9 @@ import com.example.zxq.elework.view.base.BaseActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+/**
+ * MyTabView的实现类
+ */
 public class MyTabActivity extends BaseActivity implements MyTabView {
 
     private ImageView logoutImg;
@@ -29,6 +32,10 @@ public class MyTabActivity extends BaseActivity implements MyTabView {
     private TextView phoneText;
     private ImageView userInfoImg;
 
+    /**
+     * 活动的启动接口
+     * @param context 上下文
+     */
     static public void actionStart(Context context){
         Intent intent = new Intent(context, MyTabActivity.class);
         context.startActivity(intent);
@@ -38,14 +45,16 @@ public class MyTabActivity extends BaseActivity implements MyTabView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_my_tab);
-        //初始化组件
+        /// 初始化组件
         initWidget();
-        //展示用户信息
+        /// 展示用户信息
         showUserInfo(MyApplication.getUser());
     }
 
+    /**
+     * 初始化组件，注册事件
+     */
     private void initWidget() {
-        //初始化组件，注册事件
         logoutImg = (ImageView)findViewById(R.id.mine_tab_logout_img);
         avatarImg = (CircleImageView)findViewById(R.id.mine_tab_user_avatar_img);
         nameText = (TextView)findViewById(R.id.mine_tab_user_name_text);
@@ -55,6 +64,11 @@ public class MyTabActivity extends BaseActivity implements MyTabView {
         userInfoImg.setOnClickListener(onClickListener);
     }
 
+    /**
+     * 点击事件监听器
+     * 登出按钮: 显示对话框
+     * 用户信息：进入用户信息界面
+     */
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -67,10 +81,18 @@ public class MyTabActivity extends BaseActivity implements MyTabView {
         }
     };
 
+    /**
+     * 进入用户信息界面
+     */
     private void jumpToUserInfo() {
         UserInfoActivity.actionStart(MyTabActivity.this);
     }
 
+    /**
+     * 登出操作
+     * 1. 清空application中的数据
+     * 2. 切换到登录活动
+     */
     private void userLogout() {
         //application清空用户数据
         MyApplication.userLogout();
@@ -78,6 +100,9 @@ public class MyTabActivity extends BaseActivity implements MyTabView {
         LoginActivity.ActionStart(MyTabActivity.this);
     }
 
+    /**
+     * 登出对话框
+     */
     private AlertDialog.Builder dialog;
 
     private AlertDialog.Builder getLogoutDialog(){
@@ -90,6 +115,7 @@ public class MyTabActivity extends BaseActivity implements MyTabView {
             dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
+                    /// 点击确认，调用userLogout()
                     userLogout();
                 }
             });
@@ -97,6 +123,10 @@ public class MyTabActivity extends BaseActivity implements MyTabView {
         return dialog;
     }
 
+    /**
+     * 展示用户数据
+     * @param userDO 用户信息
+     */
     @Override
     public void showUserInfo(UserDO userDO) {
         Glide.with(this).load(UrlUtil.getImageUrl(userDO.getAvatar())).into(avatarImg);
@@ -104,6 +134,10 @@ public class MyTabActivity extends BaseActivity implements MyTabView {
         phoneText.setText(DataDealUtil.dealTelephone(userDO.getPhone()));
     }
 
+    /**
+     * 展示消息
+     * @param msg 消息
+     */
     @Override
     public void showMsg(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();

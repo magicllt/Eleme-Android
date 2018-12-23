@@ -24,7 +24,9 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * TakeAwayView的实现类
+ */
 public class TakeAwayFragment extends Fragment implements TakeAwayView {
 
     private Context context;
@@ -32,6 +34,7 @@ public class TakeAwayFragment extends Fragment implements TakeAwayView {
     private ShopAdapter adapter;
     private SmartRefreshLayout refreshLayout;
 
+    /// 商家列表项的点击事件
     private ShopAdapter.ShopAdapterListener shopAdapterListener = new ShopAdapter.ShopAdapterListener() {
         @Override
         public void onShopListItemClick(int id) {
@@ -52,6 +55,9 @@ public class TakeAwayFragment extends Fragment implements TakeAwayView {
         return fragmentView;
     }
 
+    /**
+     * 初始化组件并且设置监听器
+     */
     private void initWidget() {
         refreshLayout = (SmartRefreshLayout)fragmentView.findViewById(R.id.take_out_refresh_layout);
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
@@ -75,11 +81,19 @@ public class TakeAwayFragment extends Fragment implements TakeAwayView {
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * 展示信息
+     * @param msg 消息
+     */
     @Override
     public void showMsg(String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 加载数据的结束的调用方法
+     * @param isSuccess 是否加载成功
+     */
     @Override
     public void finishLoadMore(boolean isSuccess) {
         if (isSuccess){
@@ -91,16 +105,27 @@ public class TakeAwayFragment extends Fragment implements TakeAwayView {
         }
     }
 
+    /**
+     * 没有更多数据的调用方法
+     */
     @Override
     public void finsihLoadMoreWithoutMoreData() {
         refreshLayout.finishLoadMoreWithNoMoreData();
     }
 
+    /**
+     * 添加数据
+     * @param object 添加的数据
+     */
     @Override
     public void addData(Object object) {
         adapter.addData((List<ShopListItemDO>)(object));
     }
 
+    /**
+     * 切换到订单详情
+     * @param id 商家的id
+     */
     @Override
     public void jumpToShopDetail(int id) {
         ShopMainActivity.actionStart(context, id);

@@ -17,13 +17,20 @@ import java.util.List;
 
 /**
  * Created by LLT on 2018/12/13.
+ * AddressManagerModel的实现类
  */
 
 public class AddressManagerModelImpl implements AddressManagerModel {
 
+    /**
+     * 获取地址列表
+     * @param listener 监听器
+     */
     @Override
     public void listAddress(final OnModelFinishedListener listener) {
+        /// 构建请求
         Request request = ItheimaHttp.newGetRequest(UrlUtil.getAddressList());
+        /// 发送请求，传入监听器
         Call call = ItheimaHttp.send(request, new HttpResponseListener<Result<List<AddressDO>>>() {
             @Override
             public void onResponse(Result<List<AddressDO>> result) {
@@ -42,15 +49,17 @@ public class AddressManagerModelImpl implements AddressManagerModel {
         });
     }
 
-    @Override
-    public void saveAddress() {
-
-    }
-
+    /**
+     *
+     * @param id 地址的id
+     * @param listener 监听器
+     */
     @Override
     public void removeAddress(int id, final OnModelFinishedListener listener) {
+        /// 构建请求，传入参数
         Request request = ItheimaHttp.newPostRequest(UrlUtil.getAddressDelete());
         request.putParams("id", id);
+        /// 发送请求，传入监听器
         Call call = ItheimaHttp.send(request, new HttpResponseListener<Result<Boolean>>() {
             @Override
             public void onResponse(Result<Boolean> result) {
@@ -68,8 +77,4 @@ public class AddressManagerModelImpl implements AddressManagerModel {
         });
     }
 
-    @Override
-    public void updateAddress() {
-
-    }
 }

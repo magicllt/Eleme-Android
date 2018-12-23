@@ -25,12 +25,18 @@ import com.example.zxq.elework.widget.BounceLoadingView;
 
 import java.util.ArrayList;
 
+/**
+ * OrderDetailView的实现类
+ */
 public class OrderDetailActivity extends AbstractStateActivity implements OrderDetailView{
 
+    /// id的tag
     static String ID_TAG = "id";
 
+    /// 订单的id
     int id;
 
+    /// 订单详情
     OrderDetailDO orderDetailDO;
 
     private View normalView;
@@ -49,6 +55,11 @@ public class OrderDetailActivity extends AbstractStateActivity implements OrderD
     private OrderItemAdapter adapter;
     private OrderDetailPresenter orderDetailPresenter;
 
+    /**
+     * 活动的启动接口
+     * @param context 上下文
+     * @param id 订单的id
+     */
     static void actionStart(Context context, int id){
         Intent intent = new Intent(context, OrderDetailActivity.class);
         intent.putExtra(ID_TAG, id);
@@ -66,6 +77,9 @@ public class OrderDetailActivity extends AbstractStateActivity implements OrderD
         getOrderDetail();
     }
 
+    /**
+     * 初始化界面，设置监听器
+     */
     private void initWidget() {
         normalView = (View)findViewById(R.id.activity_order_detail_normal);
         errorView = (View)findViewById(R.id.activity_order_detail_error);
@@ -92,10 +106,18 @@ public class OrderDetailActivity extends AbstractStateActivity implements OrderD
         goodsList.setAdapter(adapter);
     }
 
+    /**
+     * 调用presenter获取订单详情
+     */
     void getOrderDetail(){
         orderDetailPresenter.getOrderDetail(id);
     }
 
+    /**
+     * 点击事件的监听器
+     * 1. reloadBtn: 重新获取数据
+     * 2. orderAgin： 再来一单
+     */
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -108,6 +130,10 @@ public class OrderDetailActivity extends AbstractStateActivity implements OrderD
         }
     };
 
+    /**
+     * 再来一单
+     * 设置OrderPayParam，调用OrderPayActivity的启动接口
+     */
     private void jumpToOrderAgin() {
         OrderPayParam param = new OrderPayParam();
         param.setShopDO(orderDetailDO.getShop());
@@ -116,6 +142,9 @@ public class OrderDetailActivity extends AbstractStateActivity implements OrderD
         OrderPayActivity.actionStart(this, param);
     }
 
+    /**
+     * 设置加载组件的动画参数
+     */
     private void setLoadingViewParam() {
         loadingView.addBitmap(R.mipmap.loading4);
         loadingView.addBitmap(R.mipmap.loading5);
@@ -128,26 +157,46 @@ public class OrderDetailActivity extends AbstractStateActivity implements OrderD
         loadingView.start();
     }
 
+    /**
+     * 显示消息
+     * @param msg 消息
+     */
     @Override
     public void showMsg(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * 返回正常的界面
+     * @return
+     */
     @Override
     public View getNormalView() {
         return normalView;
     }
 
+    /**
+     * 返回异常的界面
+     * @return
+     */
     @Override
     public View getErrorView() {
         return errorView;
     }
 
+    /***
+     * 返回加载的界面
+     * @return
+     */
     @Override
     public View getLoadingView() {
         return loadView;
     }
 
+    /**
+     * 展示订单详情的数据
+     * @param orderDetail 订单详情
+     */
     @Override
     public void showOrderDetailInfo(OrderDetailDO orderDetail) {
 

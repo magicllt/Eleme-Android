@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 import lombok.Data;
 
+/**
+ * 保存地址的pojo
+ */
 @Data
 public class AddressDO implements Serializable{
     Integer id;
